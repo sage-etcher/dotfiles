@@ -1,85 +1,23 @@
 
-# The following lines were added by compinstall
+# https://github.com/sage-etcher/config-files/blob/main/zsh/zshrc
+#
+# Sage I. Hendricks
+# Last modified: Jan 2nd, 2024
 
-#zstyle ':completion:*' completer _expand _complete _ignored _approximate
-zstyle ':completion:*' completer _expand _complete _ignored
-zstyle :compinstall filename '/home/dev/.zshrc'
 
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-# Lines configured by zsh-newuser-install
-# End of lines configured by zsh-newuser-install
+ZSH_CONFIG="$XDG_CONFIG_HOME/zsh"
 
-# add a history file
-HISTSIZE=1000
-SAVEHIST=1000
-HISTFILE=$HOME/.zsh_history
-export HISTSIZE SAVEHIST HISTFILE
+source "$ZSH_CONFIG/general/completion.zsh"
+source "$ZSH_CONFIG/general/history.zsh"
+source "$ZSH_CONFIG/general/prompt.zsh"
+source "$ZSH_CONFIG/general/zkbd.zsh"
+source "$ZSH_CONFIG/general/rebind.zsh"
+source "$ZSH_CONFIG/general/alias.zsh"
+source "$ZSH_CONFIG/general/constants.zsh"
 
-# set keybinds
-bindkey -v
+source "$ZSH_CONFIG/zplug/init.zsh"
 
-# setup useful enviornmental variables
-LD_LIBRARY_PATH=/lib:/lib32:/lib64:/usr/lib:/usr/lib32:/usr/lib64:/usr/local/lib:/usr/local/lib32:/usr/local/lib64
-export LD_LIBRARY_PATH
+source "$ZSH_CONFIG/plug-config/zsh-vi-mode.zsh"
 
-# setup the prompt
-autoload -Uz add-zsh-hook vcs_info
-setopt prompt_subst
-add-zsh-hook precmd vcs_info
-zstyle ':vcs_info:*' formats ' %F{magenta}(%b)%f'
-PS1='%F{green}%m@%n%f %F{cyan}%~%f${vcs_info_msg_0_} $ '
 
-# setup openssh
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-    ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
-fi
-if [[ ! -f "$SSH_AUTH_SOCK" ]]; then
-    source "$XDG_RUNTIME_DIR/ssh-agent.env" > /dev/null
-fi
-#   set default lifespan for ssh-add (1 hour)
-alias ssh-add='ssh-add -t 1h'
-#   set env variable to SSH's we may want
-export SSH_GITHUB=$HOME/.ssh/github
-
-# setup extra keys.
-zkbd_file="$HOME/.zkbd/$TERM-${${DISPLAY:t}:-$VENDOR-$OSTYPE}"
-if [ ! -f "$zkbd_file" ]; then
-    autoload zkbd
-    zkbd
-fi
-source "$zkbd_file"
-[[ -n "$key[Home]" ]] && bindkey - "$key[Home]" beginning-of-line
-[[ -n "$key[End]" ]] && bindkey - "$key[End]" end-of-line
-[[ -n "$key[Insert]" ]] && bindkey - "$key[Insert]" overwrite-mode
-[[ -n "$key[Backspace]" ]] && bindkey - "$key[Backspace]" backward-delete-char
-[[ -n "$key[Delete]" ]] && bindkey - "$key[Delete]" delete-char
-[[ -n "$key[Up]" ]] && bindkey - "$key[Up]" up-line-or-history
-[[ -n "$key[Down]" ]] && bindkey - "$key[Down]" down-line-or-history
-[[ -n "$key[Left]" ]] && bindkey - "$key[Left]" backward-char
-[[ -n "$key[Right]" ]] && bindkey - "$key[Right]" forward-char
-# rebind Caps Lock to escape
-setxkbmap -option caps:escape
-
-# command aliases
-#   make sure to expand aliases even if sudo is passed
-alias sudo='sudo '
-#   colorful commands
-alias less='less -r'
-alias ip='ip -color'
-alias grep='grep --color=always'
-alias pacman='pacman --color always'
-alias ls='ls -F --color=always'
-#   list shortcuts
-alias la='ls -a'
-alias ll='ls -l'
-alias lla='ls -la'
-#   poweroff/shortcuts
-alias shutdown='sudo shutdown -h now'
-alias reboot='sudo reboot'
-alias halt='echo "no.";'
-#   nvim shortcut
-alias stdvim='/usr/bin/vim'
-alias vim='nvim'
-alias v='nvim'
+# end of file
