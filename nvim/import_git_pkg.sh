@@ -1,14 +1,5 @@
 # source this file to use in a bash script. does nothing if executed 
-
-# silent pushd
-function spushd {
-    command pushd "$@" > /dev/null
-}
-
-# silent popd
-function spopd {
-    command popd "$@" > /dev/null
-}
+# source example: ". ./import_git_pkg.sh"
 
 # convert string to lower case
 function to_lower {
