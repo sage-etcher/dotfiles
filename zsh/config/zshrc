@@ -3,19 +3,21 @@
 # Directories to use
 export CONFIG="$XDG_CONFIG_HOME/zsh"
 
-# General settings
-source $CONFIG/modules/set-prompt.zsh
-source $CONFIG/modules/auto-complete.zsh
-source $CONFIG/modules/set-aliases.zsh
-
-# Themes
-#source $CONFIG/theme/lukerandall.zsh
-
 # Plugins
 source $CONFIG/oh-my-zsh/plugins.zsh
 source $CONFIG/plugconf/git.zsh
 
+# Themes
+#source $CONFIG/theme/lukerandall.zsh
+
 # Package Manager (oh-my-zsh)
 export ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
+export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/.zcompdump-$HOST"
 source $ZSH/oh-my-zsh.sh
+
+# General settings (and overides)
+source $CONFIG/modules/set-prompt.zsh
+source $CONFIG/modules/auto-complete.zsh
+source $CONFIG/modules/set-aliases.zsh
+source $CONFIG/modules/log-history.zsh
 

@@ -1,0 +1,13 @@
+
+PATH="/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin"
+EDITOR="nvim"
+PAGER="less"
+export PATH EDITOR PAGER
+
+LC_COLLATE="C"
+LC_ALL="C"
+#export LC_COLLATE LC_ALL
+
+#ZDOTDIR="$HOME/.config/zsh"
+#export ZDOTDIR
+
