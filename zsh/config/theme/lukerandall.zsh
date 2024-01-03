@@ -1,0 +1,4 @@
+
+ZSH_THEME="lukerandall"
+
+
