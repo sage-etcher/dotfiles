@@ -1,23 +1,24 @@
 
 
 # Directories to use
-export CONFIG="$XDG_CONFIG_HOME/zsh"
+export CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}"
+export CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}"
 
 # Plugins
-source $CONFIG/oh-my-zsh/plugins.zsh
+source $CONFIG_DIR/zsh/oh-my-zsh/plugins.zsh
 
 # Themes
 #source $CONFIG/theme/lukerandall.zsh
 
 # Package Manager (oh-my-zsh)
-export ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
-export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/.zcompdump-$HOST"
+export ZSH="$CONFIG_DIR/oh-my-zsh"
+export ZSH_COMPDUMP="$CACHE_DIR/zsh/.zcompdump-$HOST"
 source $ZSH/oh-my-zsh.sh
 
 # General settings (and overides)
-source $CONFIG/modules/prompt.zsh
-source $CONFIG/modules/auto-complete.zsh
-source $CONFIG/modules/tab-complete-no-expand.zsh
-source $CONFIG/modules/aliases.zsh
-source $CONFIG/modules/history.zsh
+source $CONFIG_DIR/zsh/modules/prompt.zsh
+source $CONFIG_DIR/zsh/modules/auto-complete.zsh
+source $CONFIG_DIR/zsh/modules/tab-complete-no-expand.zsh
+source $CONFIG_DIR/zsh/modules/aliases.zsh
+source $CONFIG_DIR/zsh/modules/history.zsh
 
