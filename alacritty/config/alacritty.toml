@@ -1,5 +1,5 @@
 import = [
-    "$XDG_CONFIG_HOME/alacritty/themes/themes/palenight.toml"
+    "${XDG_CONFIG_HOME:-$HOME/.config}/alacritty/themes/themes/palenight.toml"
 ]
 
 [font]
