@@ -1,10 +1,11 @@
 #!/bin/sh
 
 # configuration variables
-VIM_PACK="$HOME/.vim/pack"
+#VIM_PACK="$HOME/.vim/pack"
+VIM_PACK="$XDG_CONFIG_DIR/vim/pack"
 
 NVIM_SETUP=1
-NVIM_PACK="$HOME/.config/nvim/pack"
+NVIM_PACK="$XDG_CONFIG_DIR/nvim/pack"
 
 # source import file
 . ./import_git_pkg.sh
