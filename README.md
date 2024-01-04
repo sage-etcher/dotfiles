@@ -2,7 +2,6 @@
 # My Dotfiles
 
 Legit just a collection of dot files I find myself needing on a decent basis
-:shrugwoman:
 
 All are designed to follow the XDG Base Directory standards, so none of that
 `$HOME/.*` business!
