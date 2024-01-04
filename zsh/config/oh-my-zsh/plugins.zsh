@@ -1,3 +1,3 @@
 
-plugins=(git)
+plugins+=(vi-mode zsh-vimode-visual)
 
