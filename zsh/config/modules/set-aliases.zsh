@@ -1,7 +1,7 @@
 
 alias sudo='sudo '
 
-alias ls='ls -FH --color=auto --group-directories-first'
+alias ls='ls -FHv --color=auto --group-directories-first'
 alias la='ls -a'
 alias ll='ls -l'
 alias lla='ls -la'

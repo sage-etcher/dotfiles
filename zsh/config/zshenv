@@ -1,13 +1,15 @@
 
-PATH="/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin"
+#PATH=""
+#PATH="$PATH:/usr/bin"
+#PATH="$PATH:/usr/local/bin:/usr/local/sbin"
+PATH="$PATH:$HOME/.local/bin:$HOME/.local/sbin"
+
+#LD_LIBRARY_PATH=""
+#LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib:/usr/lib32"
+#LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib"
+LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/.local/lib"
+
 EDITOR="nvim"
 PAGER="less"
-export PATH EDITOR PAGER
-
-LC_COLLATE="C"
-LC_ALL="C"
-#export LC_COLLATE LC_ALL
-
-#ZDOTDIR="$HOME/.config/zsh"
-#export ZDOTDIR
+export PATH LD_LIBRARY_PATH EDITOR PAGER
 
