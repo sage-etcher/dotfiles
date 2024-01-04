@@ -1,3 +1,4 @@
 
-plugins+=(vi-mode zsh-vimode-visual)
+plugins+=(vi-mode)
+plugins+=(zsh-vimode-visual)
 
