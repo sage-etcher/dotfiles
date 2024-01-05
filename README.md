@@ -17,22 +17,15 @@ the XDG directories. I recomend adding the enviornment variables in the
 `/etc/security/pam_env.conf` file. A non-inclusive list of programs that may
 need this are:
 
-## X (xinit & startx)
-
 ``` text
+# X11
 XINITRC     DEFAULT=@{HOME}/.config/x/xintrc
 XAUTHORITY  DEFAULT=@{HOME}/.config/x/Xauthority
-```
 
-## Z-Shell (zsh)
+# Z-Shell (zsh)
+ZDOTDIR     DEFAULT=@{HOME}/.config/zsh
 
-``` text
-ZDOTDIR  DEFAULT=@{HOME}/.config/zsh
-```
-
-## Node Package Manager (npm)
-
-``` text
+# npm
 NPM_CONFIG_USERCONFIG  DEFAULT=@{HOME}/.config/npm/npmrc
 ```
 
