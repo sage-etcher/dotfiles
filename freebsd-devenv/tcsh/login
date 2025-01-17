@@ -1,0 +1,52 @@
+#
+# .login - csh login script, read by login shell, after `.cshrc' at login.
+#
+# See also csh(1), environ(7).
+#
+
+# Query terminal size; useful for serial lines.
+if ( -x /usr/bin/resizewin ) /usr/bin/resizewin -z
+
+# Display a random cookie on each login.
+#if ( -x /usr/bin/fortune ) /usr/bin/fortune freebsd-tips
+
+
+# environment
+setenv EDITOR   vi
+setenv PAGER    less
+setenv TERMINAL st
+set path = ($path ${HOME}/.local/bin)
+
+
+# force XDG
+setenv XINITRC			${XDG_CONFIG_HOME}/X11/xinitrc
+setenv XSERVERRC		${XDG_CONFIG_HOME}/X11/xserverrc
+setenv XAUTHORITY		${XDG_RUNTIME_DIR}/Xauthority
+setenv TERMINFO			${XDG_DATA_HOME}/terminfo
+setenv TERMINFO_DIRS	${XDG_DATA_HOME}/terminfo:/usr/share/terminfo
+setenv HISTFILE			${XDG_CACHE_HOME}/bash.history # bash
+setenv WGETRC			${XDG_CONFIG_HOME}/wget/wgetrc
+setenv NPM_CONFIG_USERCONFIG	${XDG_CONFIG_HOME}/npm/npmrc
+
+
+# start ssh-agent once
+set SSH_ENV = "$HOME/.ssh/agent-environment"
+set SSH_RUNNING = 0 # false
+
+if ( { test -f "$SSH_ENV" } ) then
+    source "$SSH_ENV" > /dev/null
+    ps -ef $SSH_AGENT_PID > /dev/null
+    @ SSH_RUNNING = ( ! $status )
+endif
+
+if ( ! $SSH_RUNNING ) then
+    echo "initializing new ssh agent..."
+    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "$SSH_ENV"
+    echo "succeeded"
+    chmod 600 "$SSH_ENV"
+    source "$SSH_ENV" > /dev/null
+    /usr/bin/ssh-add
+endif
+
+unset SSH_RUNNING
+
