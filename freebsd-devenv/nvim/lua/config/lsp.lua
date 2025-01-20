@@ -1,7 +1,14 @@
 
+local executable = vim.fn.executable
 
-local lsp = require('lspconfig')
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+if executable('clangd17') == 1 then
+  vim.lsp.start({
+    name = 'Clangd',
+
+  })
+
+
+
 
 lsp.clangd.setup({
   cmd = { 'clangd17' },
