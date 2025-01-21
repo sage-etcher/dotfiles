@@ -1,6 +1,7 @@
 -- import
 local cmp = require('cmp')
 local trouble = require('trouble')
+local tmux = require('tmux')
 local ts_builtin = require('telescope.builtin')
 
 -- leader config
@@ -99,6 +100,28 @@ local opts = {}
 keymap('n', '<leader>ff', ts_builtin.find_files, opts)
 keymap('n', '<leader>fg', ts_builtin.live_grep, opts)
 keymap('n', '<leader>fb', ts_builtin.buffers, opts)
+
+
+-- tmux integration
+local opts = {}
+-- keymap('n', '<C-M-h>', ':vertical resize +5<CR>', opts)
+-- keymap('n', '<C-M-j>', ':resize -2<CR>', opts)
+-- keymap('n', '<C-M-k>', ':resize +2<CR>', opts)
+-- keymap('n', '<C-M-l>', ':vertical resize -5<CR>', opts)
+-- keymap('n', '<M-h>', '<C-w>h', opts)
+-- keymap('n', '<M-j>', '<C-w>j', opts)
+-- keymap('n', '<M-k>', '<C-w>k', opts)
+-- keymap('n', '<M-l>', '<C-w>l', opts)
+
+keymap('n', '<M-h>', tmux.move_left, opts)
+keymap('n', '<M-j>', tmux.move_bottom, opts)
+keymap('n', '<M-k>', tmux.move_top, opts)
+keymap('n', '<M-l>', tmux.move_right, opts)
+
+keymap('n', '<C-h>', tmux.resize_left, opts)
+keymap('n', '<C-j>', tmux.resize_bottom, opts)
+keymap('n', '<C-k>', tmux.resize_top, opts)
+keymap('n', '<C-l>', tmux.resize_right, opts)
 
 
 -- end of file

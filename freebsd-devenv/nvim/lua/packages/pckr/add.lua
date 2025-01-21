@@ -19,7 +19,6 @@ require('pckr').add({
     }
   };
 
-
   -- code intellegence
   -- language server
   { 'neovim/nvim-lspconfig',
@@ -80,6 +79,12 @@ require('pckr').add({
   { 'nyoom-engineering/oxocarbon.nvim',
     config = function() require('config.oxocarbon') end,
   };
+
+  -- tmux integration
+  { 'aserowy/tmux.nvim',
+    config = function() require('config.tmux') end,
+  };
+
 
 })
 
