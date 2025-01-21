@@ -21,45 +21,46 @@ require('pckr').add({
 
   -- code intellegence
   -- language server
-  { 'neovim/nvim-lspconfig',
-    config = function() require('config.lspconfig') end,
-    requires = {
-      -- autocompletion engine
-      { 'hrsh7th/nvim-cmp',
-        config = function() require('config.cmp') end,
-        requires = {
-          { 'hrsh7th/cmp-nvim-lsp' }; --{ 'hrsh7th/cmp-buffer' };
-          --{ 'hrsh7th/path' };
-          --{ 'hrsh7th/cmdline' };
+  -- initialized in root init.lua
 
-          -- snippet engine
-          { 'hrsh7th/cmp-vsnip' };
-          { 'hrsh7th/vim-vsnip',
-            config = function() require('config.vsnip') end,
-            requires = {
-              -- snippet list
-              { 'sage-etcher/friendly-snippets' };
-            },
-          };
+  -- autocompletion engine
+  { 'hrsh7th/nvim-cmp',
+    config = function() require('config.cmp') end,
+    requires = {
+      { 'hrsh7th/cmp-nvim-lsp' }; --{ 'hrsh7th/cmp-buffer' };
+      --{ 'hrsh7th/path' };
+      --{ 'hrsh7th/cmdline' };
+
+      -- snippet engine
+      { 'hrsh7th/cmp-vsnip' };
+      { 'hrsh7th/vim-vsnip',
+        config = function() require('config.vsnip') end,
+        requires = {
+          -- snippet list
+          { 'sage-etcher/friendly-snippets' };
         },
       };
-      -- signatures are lovely, coc is a dream, rest in peice :c
-      { 'ray-x/lsp_signature.nvim',
-        config = function() require('config.lsp_signature') end,
-      };
-      -- linter
-      { 'mfussenegger/nvim-lint',
-        config = function() require('config.nvim_lint') end,
-      };
-      -- formatters
-      { 'mhartington/formatter.nvim',
-        config = function() require('config.formatter') end,
-      };
-      -- better error view
-      { 'folke/trouble.nvim',
-        config = function() require('config.trouble') end,
-      };
     },
+  };
+
+  -- signatures are lovely, coc is a dream, rest in peice :c
+  { 'ray-x/lsp_signature.nvim',
+    config = function() require('config.lsp_signature') end,
+  };
+
+  -- linter
+  { 'mfussenegger/nvim-lint',
+    config = function() require('config.nvim_lint') end,
+  };
+
+  -- formatters
+  { 'mhartington/formatter.nvim',
+    config = function() require('config.formatter') end,
+  };
+
+  -- better error view
+  { 'folke/trouble.nvim',
+    config = function() require('config.trouble') end,
   };
 
   -- pretty

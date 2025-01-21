@@ -1,20 +1,34 @@
 
-local executable = vim.fn.executable
 
-if executable('clangd17') == 1 then
-  vim.lsp.start({
-    name = 'Clangd',
+local lsp = vim.lsp
+local fs = vim.fs
+local autocmd = vim.api.nvim_create_autocmd
 
-  })
+local findroot = function(file_list)
+  return fs.dirname(fs.find(file_list, { upward = true })[1])
+end
 
-
-
-
-lsp.clangd.setup({
-  cmd = { 'clangd17' },
-  single_file_support = true,
-
-  capabilities = capabilities,
+autocmd('FileType', {
+  pattern = { 'c', 'cpp' },
+  callback = function(ev)
+    lsp.start({
+      name = 'Clangd',
+      cmd = { 'clangd17' },
+      root_dir = findroot({
+        '.clangd',
+        '.clang-tidy',
+        '.clang-format',
+        'compile_commands.json',
+        'compile_flags.txt',
+        'configure.ac',
+        '.git',
+      }),
+      settings = {
+        single_file_support = true,
+      }
+    })
+  end
 })
+
 
 -- end of file
