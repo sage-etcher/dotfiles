@@ -1,4 +1,6 @@
 -- import
+require('utils')
+
 local cmp = require('cmp')
 local trouble = require('trouble')
 local tmux = require('tmux')
@@ -6,32 +8,6 @@ local ts_builtin = require('telescope.builtin')
 
 -- leader config
 vim.g.mapleader = ','
-
--- vim shorthand
-local keymap = vim.keymap.set
-local feedkeys = function(key, mode)
-  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
-end
-local handle_expandtab = function(text)
-  if vim.o.expandtab == true then
-    local tab = '<Tab>'
-
-    local _,col = unpack(vim.api.nvim_win_get_cursor(0))
-    local n = vim.o.tabstop - (col % vim.o.tabstop)
-    local spaces = string.rep('<Space>', n)
-
-    local new_text = string.gsub(text, tab, spaces) 
-
-    return new_text 
-  end
-  return text
-end
-local fallback = function(text)
-  print(text)
-  local vim_text = vim.api.nvim_replace_termcodes(handle_expandtab(text), true, true, true)
-  vim.api.nvim_put({ vim_text }, 'c', false, true)
-end
-
 
 -- cmp and vsnip
 local has_words_before = function()
@@ -73,14 +49,14 @@ end, opts)
 
 -- lsp
 local opts = {}
-keymap('n', 'K', vim.lsp.buf.hover, opts)
-keymap('n', 'gd', vim.lsp.buf.definition, opts)
-keymap('n', 'gD', vim.lsp.buf.declaration, opts)
-keymap('n', 'gi', vim.lsp.buf.implementation, opts)
-keymap('n', 'go', vim.lsp.buf.type_definition, opts)
-keymap('n', 'gr', vim.lsp.buf.references, opts)
-keymap('n', 'gs', vim.lsp.buf.signature_help, opts)
-keymap('n', '<F2>', vim.lsp.buf.rename, opts)
+keymap('n', 'K', lsp.buf.hover, opts)
+keymap('n', 'gd', lsp.buf.definition, opts)
+keymap('n', 'gD', lsp.buf.declaration, opts)
+keymap('n', 'gi', lsp.buf.implementation, opts)
+keymap('n', 'go', lsp.buf.type_definition, opts)
+keymap('n', 'gr', lsp.buf.references, opts)
+keymap('n', 'gs', lsp.buf.signature_help, opts)
+keymap('n', '<F2>', lsp.buf.rename, opts)
 
 -- formatter
 local opts = {}
@@ -89,7 +65,7 @@ keymap('n', '<F3>', ':Format', opts)
 
 -- trouble
 local opts = { silent = true }
-vim.keymap.set('n', '<leader>xx', function()
+keymap('n', '<leader>xx', function()
   -- will throw error string on closing, ie silent
   trouble.focus(trouble.toggle('diagnostics'))
 end, opts)
@@ -104,15 +80,6 @@ keymap('n', '<leader>fb', ts_builtin.buffers, opts)
 
 -- tmux integration
 local opts = {}
--- keymap('n', '<C-M-h>', ':vertical resize +5<CR>', opts)
--- keymap('n', '<C-M-j>', ':resize -2<CR>', opts)
--- keymap('n', '<C-M-k>', ':resize +2<CR>', opts)
--- keymap('n', '<C-M-l>', ':vertical resize -5<CR>', opts)
--- keymap('n', '<M-h>', '<C-w>h', opts)
--- keymap('n', '<M-j>', '<C-w>j', opts)
--- keymap('n', '<M-k>', '<C-w>k', opts)
--- keymap('n', '<M-l>', '<C-w>l', opts)
-
 keymap('n', '<M-h>', tmux.move_left, opts)
 keymap('n', '<M-j>', tmux.move_bottom, opts)
 keymap('n', '<M-k>', tmux.move_top, opts)

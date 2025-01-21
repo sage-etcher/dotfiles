@@ -1,5 +1,5 @@
 
-vim.opt.signcolumn = "number"
+vim.opt.signcolumn = "yes"
 
 
 -- end of file

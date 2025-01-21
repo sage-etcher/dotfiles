@@ -1,5 +1,7 @@
 
-require('tabset').setup({
+local tabset = require('tabset')
+
+tabset.setup({
   defaults = {
     tabwidth = 4,
     expandtab = true,

@@ -47,7 +47,7 @@ lint.linters_by_ft = {
 }
 
 
-vim.api.nvim_create_autocmd({ 'BufWritePost' }, {
+autocmd('BufWritePost', {
   callback = function()
     -- try to lint, using the linters_by_ft defines
     lint.try_lint()

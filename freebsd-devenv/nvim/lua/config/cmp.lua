@@ -1,5 +1,7 @@
 
 
+require('utils')
+
 local cmp = require('cmp')
 
 cmp.setup({

@@ -1,3 +1,5 @@
 
-require('keybinds.unmap')
-require('keybinds.mapping')
+
+require('keybinds.keymap')
+
+-- end of file

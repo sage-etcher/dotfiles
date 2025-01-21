@@ -1,8 +1,6 @@
 
 
-local lsp = vim.lsp
-local fs = vim.fs
-local autocmd = vim.api.nvim_create_autocmd
+require('utils')
 
 local findroot = function(file_list)
   return fs.dirname(fs.find(file_list, { upward = true })[1])

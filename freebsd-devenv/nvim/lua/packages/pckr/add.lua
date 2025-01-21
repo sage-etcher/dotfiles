@@ -87,6 +87,11 @@ require('pckr').add({
   };
 
 
+  -- mild git integration
+  { 'airblade/vim-gitgutter',
+    config = function() require('config.gitgutter') end,
+  };
+
 })
 
 -- end of file
