@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 sync() {
-    rsync -avu --delete "$1" "$2"
+    rsync -au --delete "$1" "$2"
 }
 
 sync_from_config() {
