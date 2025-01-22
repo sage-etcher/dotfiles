@@ -34,9 +34,11 @@ fi
 
 rebuild-dwm
 
+VBoxClient --vmsvga
+VBoxClient --clipboard
+feh --no-fehbg --bg-scale "${XDG_CONFIG_HOME}/feh/wallpaper"
+xmodmap "${XDG_CONFIG_HOME}/xmodmap/xmodmaprc"
 
-feh --no-fehbg --bg-scale "${XDG_CONFIG_HOME}/feh/wallpaper" &
 xcompmgr &
-xmodmap "${XDG_CONFIG_HOME}/xmodmap/xmodmaprc" &
 exec dwm
 
