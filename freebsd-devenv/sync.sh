@@ -13,7 +13,7 @@ sync_from_config() {
 }
 
 # sync basic config
-for config in X11 git nvim tmux xmodmap; do
+for config in X11 git nvim tmux npm xmodmap; do
     sync_from_config "${config}/"
 done
 
