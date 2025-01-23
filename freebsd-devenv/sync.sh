@@ -13,17 +13,16 @@ sync_from_config() {
 }
 
 # sync basic config
-for config in feh X11 git nvim tmux npm xmodmap; do
+for config in feh X11 git nvim tmux npm xmodmap suckless-build-files; do
     sync_from_config "${config}/"
 done
 
 # sync suckless software
 for config in dwm dmenu st; do
-    backup_pwd="${PWD}"
-    cd "${HOME}/.config/${config}"
-    make fullclean
-    cd "${backup_pwd}"
-    sync_from_config "${config}/"
+    sync_from_config "${config}/Makefile"
+    sync_from_config "${config}/config.mk"
+    sync_from_config "${config}/patch/"
+    sync_from_config "${config}/bin/"
 done
 
 # sync tcsh (has to be from home directory)

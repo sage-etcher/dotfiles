@@ -1,29 +1,20 @@
 
-DMENU_NAME      = dmenu
-DMENU_VERSION   = 5.3
-DMENU_FULLNAME := $(DMENU_NAME)-$(DMENU_VERSION)
-DMENU_ARCHIVE  := ./$(DMENU_FULLNAME).tar.gz
-DMENU_URL      := https://dl.suckless.org/tools/$(DMENU_ARCHIVE)
 
-DMENU_SRC      := ./$(DMENU_FULLNAME)
-DMENU_MAKEFILE := $(DMENU_SRC)/Makefile
-DMENU_BACKUP   := $(DMENU_SRC).orig
+NAME      = dmenu
+VERSION   = 5.3
+FULLNAME := $(NAME)-$(VERSION)
+ARCHIVE  := ./$(FULLNAME).tar.gz
+URL      := https://dl.suckless.org/tools/$(ARCHIVE)
 
-PATCH_SCRIPT  = ./script/apply_patches
-PATCH_LOG     = ./patch.log
-PATCH_PATH    = ./patch
-PATCH_LIST   := $(PATCH_PATH)/dmenu-freebsd.patch \
-                $(PATCH_PATH)/dmenu-optimization.patch \
-                $(PATCH_PATH)/dmenu-config.patch
+SRC_PATH := ./$(FULLNAME)
+MAKEFILE := $(SRC_PATH)/Makefile
+BACKUP   := $(SRC_PATH).orig
 
-COPY_R     = cp -R
-CURL       = curl
-PATCH     := patch -d $(DMENU_SRC)
-REMOVE_F   = rm -f
-REMOVE_FR  = rm -fr
-UDIFF      = diff -u
-UNPACK     = tar -xf
-
+PATCH_LOG   = ./patch.log
+PATCH_PATH  = ./patch
+PATCH_LIST := $(PATCH_PATH)/dmenu-freebsd.patch \
+              $(PATCH_PATH)/dmenu-optimization.patch \
+              $(PATCH_PATH)/dmenu-config.patch
 
 # vim: noet
 # end of file
