@@ -13,7 +13,8 @@ PATCH_SCRIPT  = ./script/apply_patches
 PATCH_LOG     = ./patch.log
 PATCH_PATH    = ./patch
 PATCH_LIST   := $(PATCH_PATH)/dwm-freebsd.patch \
-                $(PATCH_PATH)/dwm-optimization.patch
+                $(PATCH_PATH)/dwm-optimization.patch \
+                $(PATCH_PATH)/dwm-config.patch
 
 COPY_R     = cp -R
 CURL       = curl
