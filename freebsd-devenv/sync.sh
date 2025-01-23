@@ -13,7 +13,7 @@ sync_from_config() {
 }
 
 # sync basic config
-for config in feh X11 git nvim tmux npm xmodmap suckless-build-files; do
+for config in X11 git nvim tmux npm xmodmap suckless-build-files; do
     sync_from_config "${config}/"
 done
 
@@ -24,6 +24,12 @@ for config in dwm dmenu st; do
     sync_from_config "${config}/patch/"
     sync_from_config "${config}/bin/"
 done
+
+# sync only bins
+for config in feh; do
+    sync_from_config "${config}/bin/"
+done
+
 
 # sync tcsh (has to be from home directory)
 sync "${HOME}/.cshrc" "./tcsh/cshrc"
