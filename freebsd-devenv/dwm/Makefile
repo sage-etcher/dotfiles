@@ -7,7 +7,7 @@ build: generate_src
 	@$(MAKE) -C $(DWM_SRC)
 
 clean:
-	@$(MAKE) -C $(DWM_SRC) $@
+	-@$(MAKE) -C $(DWM_SRC) $@
 
 cleanbuild: clean build
 
