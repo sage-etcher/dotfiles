@@ -1,0 +1,28 @@
+diff -u ./dwm-6.5.orig ./dwm-6.5
+diff -u ./dwm-6.5.orig/config.mk ./dwm-6.5/config.mk
+--- ./dwm-6.5.orig/config.mk	2025-01-23 15:15:41.187824000 +0000
++++ ./dwm-6.5/config.mk	2025-01-23 15:15:57.306190000 +0000
+@@ -4,11 +4,11 @@
+ # Customize below to fit your system
+ 
+ # paths
+-PREFIX = /usr/local
++PREFIX = ${HOME}/.local
+ MANPREFIX = ${PREFIX}/share/man
+ 
+-X11INC = /usr/X11R6/include
+-X11LIB = /usr/X11R6/lib
++X11INC = /usr/local/include
++X11LIB = /usr/local/lib
+ 
+ # Xinerama, comment if you don't want it
+ XINERAMALIBS  = -lXinerama
+@@ -16,7 +16,7 @@
+ 
+ # freetype
+ FREETYPELIBS = -lfontconfig -lXft
+-FREETYPEINC = /usr/include/freetype2
++FREETYPEINC = /usr/local/include/freetype2
+ # OpenBSD (uncomment)
+ #FREETYPEINC = ${X11INC}/freetype2
+ #MANPREFIX = ${PREFIX}/man

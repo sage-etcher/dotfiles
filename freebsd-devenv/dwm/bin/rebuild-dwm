@@ -1,0 +1,18 @@
+#!/usr/bin/env sh
+
+DWM_CONFIG_PATH="${XDG_CONFIG_HOME}/dwm"
+
+# not all systems support pushd/popd
+# store/restore pwd instead.
+PWD_BACKUP="${PWD}"
+cd "${DWM_CONFIG_PATH}"
+
+make clean
+make build
+make install
+make clean
+
+# return to caller's directory
+cd "${PWD_BACKUP}"
+
+# end of file

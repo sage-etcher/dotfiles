@@ -1,0 +1,22 @@
+diff -u ./dwm-6.5.orig ./dwm-6.5
+diff -u ./dwm-6.5.orig/config.mk ./dwm-6.5/config.mk
+--- ./dwm-6.5.orig/config.mk	2025-01-23 15:15:41.187824000 +0000
++++ ./dwm-6.5/config.mk	2025-01-23 15:15:57.306190000 +0000
+@@ -25,11 +25,15 @@
+ INCS = -I${X11INC} -I${FREETYPEINC}
+ LIBS = -L${X11LIB} -lX11 ${XINERAMALIBS} ${FREETYPELIBS}
+ 
++# optimizations
++C_OPTIMIZATIONS = -march=native -O2
++LD_OPTIMIZATIONS = -s
++
+ # flags
+ CPPFLAGS = -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_XOPEN_SOURCE=700L -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
+ #CFLAGS   = -g -std=c99 -pedantic -Wall -O0 ${INCS} ${CPPFLAGS}
+-CFLAGS   = -std=c99 -pedantic -Wall -Wno-deprecated-declarations -Os ${INCS} ${CPPFLAGS}
+-LDFLAGS  = ${LIBS}
++CFLAGS   = -std=c99 -pedantic -Wall -Wno-deprecated-declarations -Os ${INCS} ${CPPFLAGS} ${C_OPTIMIZATIONS}
++LDFLAGS  = ${LIBS} ${LD_OPTIMIZATIONS}
+ 
+ # Solaris
+ #CFLAGS = -fast ${INCS} -DVERSION=\"${VERSION}\"
