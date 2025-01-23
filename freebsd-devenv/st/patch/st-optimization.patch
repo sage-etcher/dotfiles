@@ -1,0 +1,16 @@
+diff -u ./st-0.8.5.orig ./st-0.8.5
+Only in ./st-0.8.5: .git
+diff -u ./st-0.8.5.orig/config.mk ./st-0.8.5/config.mk
+--- ./st-0.8.5.orig/config.mk	2025-01-23 18:59:05.464610000 +0000
++++ ./st-0.8.5/config.mk	2025-01-23 19:11:30.492364000 +0000
+@@ -22,8 +22,8 @@
+ 
+ # flags
+ STCPPFLAGS = -DVERSION=\"$(VERSION)\" -D_XOPEN_SOURCE=600
+-STCFLAGS = $(INCS) $(STCPPFLAGS) $(CPPFLAGS) $(CFLAGS)
+-STLDFLAGS = $(LIBS) $(LDFLAGS)
++STCFLAGS = $(INCS) $(STCPPFLAGS) $(CPPFLAGS) $(CFLAGS) -march=native -O2
++STLDFLAGS = $(LIBS) $(LDFLAGS) -s
+ 
+ # OpenBSD:
+ #CPPFLAGS = -DVERSION=\"$(VERSION)\" -D_XOPEN_SOURCE=600 -D_BSD_SOURCE

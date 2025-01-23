@@ -17,14 +17,8 @@ for config in feh X11 git nvim tmux npm xmodmap; do
     sync_from_config "${config}/"
 done
 
-# sync dwm
-for config in st; do
-    sync_from_config "${config}/patches/"
-    sync_from_config "${config}/rebuild.sh"
-    sync "${HOME}/.config/${config}/src/config.h" "${config}/"
-done
-
-for config in dwm dmenu; do
+# sync suckless software
+for config in dwm dmenu st; do
     backup_pwd="${PWD}"
     cd "${HOME}/.config/${config}"
     make fullclean

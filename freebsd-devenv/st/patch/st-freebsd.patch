@@ -1,0 +1,20 @@
+diff -u ./st-0.8.5.orig ./st-0.8.5
+Only in ./st-0.8.5: .git
+diff -u ./st-0.8.5.orig/config.mk ./st-0.8.5/config.mk
+--- ./st-0.8.5.orig/config.mk	2025-01-23 18:59:05.464610000 +0000
++++ ./st-0.8.5/config.mk	2025-01-23 19:09:26.521304000 +0000
+@@ -4,11 +4,11 @@
+ # Customize below to fit your system
+ 
+ # paths
+-PREFIX = /usr/local
++PREFIX = ${HOME}/.local
+ MANPREFIX = $(PREFIX)/share/man
+ 
+-X11INC = /usr/X11R6/include
+-X11LIB = /usr/X11R6/lib
++X11INC = /usr/local/include/X11
++X11LIB = /usr/local/lib/X11
+ 
+ PKG_CONFIG = pkg-config
+ 
