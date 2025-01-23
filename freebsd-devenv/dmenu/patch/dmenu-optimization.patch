@@ -1,0 +1,22 @@
+diff -u ./dmenu-5.3.orig ./dmenu-5.3
+Only in ./dmenu-5.3.orig: config.h
+diff -u ./dmenu-5.3.orig/config.mk ./dmenu-5.3/config.mk
+--- ./dmenu-5.3.orig/config.mk	2025-01-23 17:28:24.873287000 +0000
++++ ./dmenu-5.3/config.mk	2025-01-23 17:30:57.119207000 +0000
+@@ -23,10 +23,14 @@
+ INCS = -I$(X11INC) -I$(FREETYPEINC)
+ LIBS = -L$(X11LIB) -lX11 $(XINERAMALIBS) $(FREETYPELIBS)
+ 
++# optimizations
++C_OPTIMIZATIONS = -march=native -O2
++LD_OPTIMIZATIONS = -s
++
+ # flags
+ CPPFLAGS = -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_XOPEN_SOURCE=700 -D_POSIX_C_SOURCE=200809L -DVERSION=\"$(VERSION)\" $(XINERAMAFLAGS)
+-CFLAGS   = -std=c99 -pedantic -Wall -Os $(INCS) $(CPPFLAGS)
+-LDFLAGS  = $(LIBS)
++CFLAGS   = -std=c99 -pedantic -Wall -Os $(INCS) $(CPPFLAGS) $(C_OPTIMIZATIONS)
++LDFLAGS  = $(LIBS) $(LD_OPTIMIZATIONS)
+ 
+ # compiler and linker
+ CC = cc
