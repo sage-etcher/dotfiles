@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+
+feh --no-fehbg --bg-scale "${XDG_CONFIG_HOME}/feh/wallpaper"
+
+# end of file
