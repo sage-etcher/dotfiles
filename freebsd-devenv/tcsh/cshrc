@@ -15,10 +15,8 @@ alias ll	ls -lAF
 
 if ($?prompt) then
 	# An interactive shell -- set some stuff up
-	set prompt = "%N@%m:%~ %# "
+    set prompt = "%N@%m:%~ %# " # default prompt pre-precmd
 	set promptchars = "%#"
-
-	set filec
 
 	set histfile = ${XDG_CACHE_HOME}/csh.history
 	set history = 1000
@@ -29,7 +27,10 @@ if ($?prompt) then
 	#alias postcmd 	'history -S'
 
     # tmux doesn't set pane_path for some reason? this is a work around c:
-	alias precmd 	'test $?TMUX -eq 1 && tmux set -p @tcsh_pane_path "$PWD"'
+    # update prompt in precmd to show git branch.
+    # wow this is a mess owo
+    alias __git_current_branch 'git rev-parse --abbrev-ref HEAD >& /dev/null && echo "(`git rev-parse --abbrev-ref HEAD`)"'
+	alias precmd   'test $?TMUX -eq 1 && tmux set -p @tcsh_pane_path "$PWD";set prompt = "%N@%m`__git_current_branch`:%~ %# "'
 
 	set autolist = ambiguous
 	# Use history to aid expansion
