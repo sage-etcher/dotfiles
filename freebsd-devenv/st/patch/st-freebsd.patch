@@ -1,6 +1,3 @@
-diff -u ./st-0.8.5.orig ./st-0.8.5
-Only in ./st-0.8.5: .git
-diff -u ./st-0.8.5.orig/config.mk ./st-0.8.5/config.mk
 --- ./st-0.8.5.orig/config.mk	2025-01-23 18:59:05.464610000 +0000
 +++ ./st-0.8.5/config.mk	2025-01-23 19:09:26.521304000 +0000
 @@ -4,11 +4,11 @@

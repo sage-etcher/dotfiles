@@ -1,5 +1,3 @@
-diff -u ./st-0.8.5.orig ./st-0.8.5
-diff -u ./st-0.8.5.orig/config.def.h ./st-0.8.5/config.def.h
 --- ./st-0.8.5.orig/config.def.h	2025-01-23 19:44:24.262204000 +0000
 +++ ./st-0.8.5/config.def.h	2025-01-23 19:46:25.370376000 +0000
 @@ -96,32 +96,24 @@

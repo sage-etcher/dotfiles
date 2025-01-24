@@ -3,6 +3,7 @@
 # SRC_PATH set in local config.mk (~/.config/[SOFTWARE]/config.mk
 
 PATCH_SCRIPT = $(GLOBAL_PATH)/script/apply_patches
+EXTERNAL_PATCH_SCRIPT = $(GLOBAL_PATH)/script/download_external_patches
 
 COPY_R    = cp -R
 CURL      = curl

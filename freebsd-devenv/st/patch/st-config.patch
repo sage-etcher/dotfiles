@@ -1,13 +1,11 @@
-diff -u ./st-0.8.5.orig ./st-0.8.5
-diff -u ./st-0.8.5.orig/config.def.h ./st-0.8.5/config.def.h
---- ./st-0.8.5.orig/config.def.h	2025-01-23 19:34:45.955442000 +0000
-+++ ./st-0.8.5/config.def.h	2025-01-23 19:36:41.391319000 +0000
+--- ./st-0.8.5.orig/config.def.h	2025-01-24 15:18:03.382588000 +0000
++++ ./st-0.8.5/config.def.h	2025-01-24 15:24:31.008976000 +0000
 @@ -5,7 +5,7 @@
   *
   * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
   */
 -static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
-+static char *font = "Fira Code Regular Nerd Font Complete Mono:size=12";
++static char *font = "FiraCode Nerd Font Mono Braille:style=Regular:size=12";
  static int borderpx = 2;
  
  /*
@@ -20,7 +18,7 @@ diff -u ./st-0.8.5.orig/config.def.h ./st-0.8.5/config.def.h
  char *utmp = NULL;
  /* scroll program: to enable use a string like "scroll" */
  char *scroll = NULL;
-@@ -94,7 +94,7 @@
+@@ -106,7 +106,7 @@
  unsigned int tabspaces = 8;
  
  /* bg opacity */
@@ -29,7 +27,7 @@ diff -u ./st-0.8.5.orig/config.def.h ./st-0.8.5/config.def.h
  
  /* Terminal colors (16 first used in escape sequence) */
  static const char *colorname[] = {
-@@ -196,6 +196,8 @@
+@@ -200,6 +200,8 @@
  	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
  	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
  	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },

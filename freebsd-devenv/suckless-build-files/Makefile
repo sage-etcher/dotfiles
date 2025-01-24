@@ -19,6 +19,7 @@ fullclean: clean
 	$(REMOVE_F)  $(ARCHIVE)
 	$(REMOVE_FR) $(SRC_PATH)
 	$(REMOVE_F)  $(PATCH_LOG)
+	$(REMOVE_FR) $(EXTERNAL_PATCH_PATH)
 
 # install/uninstall
 install uninstall: generate_src
@@ -33,7 +34,11 @@ $(MAKEFILE):
 	$(CURL) $(URL) > $(ARCHIVE)
 	$(UNPACK) $(ARCHIVE)
 
-# apply patches
+# downlad external patches
+$(EXTERNAL_PATCH_LIST):
+	mkdir "$(EXTERNAL_PATCH_PATH)"
+	$(EXTERNAL_PATCH_SCRIPT) "$(EXTERNAL_PATCH_PATH)" "$(EXTERNAL_PATCH_URLS)"
+
 $(PATCH_LOG): $(PATCH_LIST)
 	$(PATCH_SCRIPT) "$(SRC_PATH)" "$(PATCH_LIST)" "$@"
 

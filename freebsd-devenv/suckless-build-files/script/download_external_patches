@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+save_pwd=$PWD
+cd $1
+wget $2
+cd $save_pwd
+
