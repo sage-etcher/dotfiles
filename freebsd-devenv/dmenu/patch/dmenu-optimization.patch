@@ -1,6 +1,3 @@
-diff -u ./dmenu-5.3.orig ./dmenu-5.3
-Only in ./dmenu-5.3.orig: config.h
-diff -u ./dmenu-5.3.orig/config.mk ./dmenu-5.3/config.mk
 --- ./dmenu-5.3.orig/config.mk	2025-01-23 17:28:24.873287000 +0000
 +++ ./dmenu-5.3/config.mk	2025-01-23 17:30:57.119207000 +0000
 @@ -23,10 +23,14 @@
