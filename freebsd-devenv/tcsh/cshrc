@@ -14,6 +14,9 @@ alias ll	ls -lAF
 
 
 if ($?prompt) then
+    # configure gpg-agent terminal for each terminal
+    setenv GPG_TTY `tty`
+
 	# An interactive shell -- set some stuff up
     set prompt = "%N@%m:%c %# " # default prompt pre-precmd
 	set promptchars = "%#"
