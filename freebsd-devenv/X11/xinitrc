@@ -32,6 +32,8 @@ if [ -d /usr/local/etc/X11/xinit/xinitrc.d ] ; then
 	unset f
 fi
 
+xset s off -dpms
+
 rebuild-dwm
 
 VBoxClient --vmsvga
