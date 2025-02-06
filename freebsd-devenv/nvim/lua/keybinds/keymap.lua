@@ -57,6 +57,7 @@ keymap('n', 'go', lsp.buf.type_definition, opts)
 keymap('n', 'gr', lsp.buf.references, opts)
 keymap('n', 'gs', lsp.buf.signature_help, opts)
 keymap('n', '<F2>', lsp.buf.rename, opts)
+keymap('n', '<F5>', function() lsp.buf.rename('g_'..vim.fn.expand('<cword>')) end, opts) 
 
 -- formatter
 local opts = {}
