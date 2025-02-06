@@ -18,6 +18,7 @@ setenv TERMINAL st
 set path = ($path ${HOME}/.local/bin)
 
 
+
 # force XDG
 setenv XINITRC			${XDG_CONFIG_HOME}/X11/xinitrc
 setenv XSERVERRC		${XDG_CONFIG_HOME}/X11/xserverrc
@@ -27,7 +28,10 @@ setenv TERMINFO_DIRS	${XDG_DATA_HOME}/terminfo:/usr/share/terminfo
 setenv HISTFILE			${XDG_CACHE_HOME}/bash.history # bash
 setenv WGETRC			${XDG_CONFIG_HOME}/wget/wgetrc
 setenv NPM_CONFIG_USERCONFIG	${XDG_CONFIG_HOME}/npm/npmrc
+setenv GNUPGHOME        ${XDG_DATA_HOME}/gnupg
 
+# configure gpg-agent
+setenv GPG_TTY          `tty`
 
 # start ssh-agent once
 set SSH_ENV = "$HOME/.ssh/agent-environment"
