@@ -12,13 +12,16 @@ alias la	ls -aF
 alias lf	ls -FA
 alias ll	ls -lAF
 
+# I cant spell- owo
+alias blajah	blahaj
+
 
 if ($?prompt) then
-    # configure gpg-agent terminal for each terminal
-    setenv GPG_TTY `tty`
+	# configure gpg-agent terminal for each terminal
+	setenv GPG_TTY `tty`
 
 	# An interactive shell -- set some stuff up
-    set prompt = "%N@%m:%c %# " # default prompt pre-precmd
+	set prompt = "%N@%m:%c %# " # default prompt pre-precmd
 	set promptchars = "%#"
 
 	set histfile = ${XDG_CACHE_HOME}/csh.history
@@ -29,11 +32,11 @@ if ($?prompt) then
 	#alias precmd 	'history -M; history -c; history -L'
 	#alias postcmd 	'history -S'
 
-    # tmux doesn't set pane_path for some reason? this is a work around c:
-    # update prompt in precmd to show git branch.
-    # wow this is a mess owo
-    alias __git_current_branch 'git rev-parse --abbrev-ref HEAD >& /dev/null && echo "(`git rev-parse --abbrev-ref HEAD`)"'
-	alias precmd   'test $?TMUX -eq 1 && tmux set -p @tcsh_pane_path "$PWD";set prompt = "%N@%m`__git_current_branch`:%c %# "'
+	# tmux doesn't set pane_path for some reason? this is a work around c:
+	# update prompt in precmd to show git branch.
+	# wow this is a mess owo
+	alias __git_current_branch 'git rev-parse --abbrev-ref HEAD >& /dev/null && echo "(`git rev-parse --abbrev-ref HEAD`)"'
+	alias precmd	'test $?TMUX -eq 1 && tmux set -p @tcsh_pane_path "$PWD";set prompt = "%N@%m`__git_current_branch`:%c %# "'
 
 	set autolist = ambiguous
 	# Use history to aid expansion
@@ -48,3 +51,4 @@ if ($?prompt) then
 
 endif
 
+# vim: noet
