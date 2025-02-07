@@ -13,12 +13,12 @@ sync_from_config() {
 }
 
 # sync basic config
-for config in X11 wget git nvim tmux npm xmodmap suckless-build-files clang-tidy fastfetch; do
+for config in clang-tidy git npm nvim suckless-build-files tmux wget X11 xmodmap; do
     sync_from_config "${config}/"
 done
 
 # sync suckless software
-for config in dwm dmenu st; do
+for config in dmenu dwm st; do
     sync_from_config "${config}/Makefile"
     sync_from_config "${config}/config.mk"
     sync_from_config "${config}/patch/"
@@ -26,7 +26,7 @@ for config in dwm dmenu st; do
 done
 
 # sync only bins
-for config in feh; do
+for config in feh fastfetch; do
     sync_from_config "${config}/bin/"
 done
 
