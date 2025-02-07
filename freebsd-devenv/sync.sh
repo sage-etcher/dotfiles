@@ -13,7 +13,7 @@ sync_from_config() {
 }
 
 # sync basic config
-for config in X11 git nvim tmux npm xmodmap suckless-build-files clang-tidy; do
+for config in X11 git nvim tmux npm xmodmap suckless-build-files clang-tidy fastfetch; do
     sync_from_config "${config}/"
 done
 
