@@ -86,10 +86,9 @@ keymap('n', '<M-j>', tmux.move_bottom, opts)
 keymap('n', '<M-k>', tmux.move_top, opts)
 keymap('n', '<M-l>', tmux.move_right, opts)
 
-keymap('n', '<C-h>', tmux.resize_left, opts)
-keymap('n', '<C-j>', tmux.resize_bottom, opts)
-keymap('n', '<C-k>', tmux.resize_top, opts)
-keymap('n', '<C-l>', tmux.resize_right, opts)
-
+keymap('n', '<M-S-h>', tmux.resize_left, opts)
+keymap('n', '<M-S-j>', tmux.resize_bottom, opts)
+keymap('n', '<M-S-k>', tmux.resize_top, opts)
+keymap('n', '<M-S-l>', tmux.resize_right, opts)
 
 -- end of file
