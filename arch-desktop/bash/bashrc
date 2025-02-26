@@ -1,0 +1,17 @@
+
+# path config
+export PATH+=":$HOME/.local/bin:$HOME/.local/sbin"
+export PATH+=":/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
+
+# low latency configuration 
+export PULSE_LATENCY_MSEC=20
+export PIPEWIRE_ALSA='{ alsa.buffer-bytes=16384 alsa.period-bytes=1024 }'
+
+alias ls='ls --color'
+alias la='ls -a'
+alias ll='ls -la'
+alias l='ls -l'
+
+alias vim='nvim'
+
+

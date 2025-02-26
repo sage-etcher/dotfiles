@@ -1,0 +1,10 @@
+
+require('general.numbers')
+require('general.signcolumn')
+require('general.wrap')
+require('general.ruler')
+require('general.cursorline')
+require('general.whitespace')
+require('general.tmpfiles')
+require('general.providers')
+require('general.misc')

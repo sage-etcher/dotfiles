@@ -1,0 +1,19 @@
+
+[window]
+padding = { x = 5, y = 5 }
+opacity = 0.9
+
+[font]
+normal = { family = "FiraCode Nerd Font Mono Braille", style = "Regular" }
+
+[general]
+import = [
+#	"~/.config/alacritty/themes/themes/catppuccin_mocha.toml"
+#	"~/.config/alacritty/themes/themes/tokyo_night_storm.toml"
+	"~/.config/alacritty/themes/themes/vesper.toml"
+
+]
+
+
+
+

@@ -1,0 +1,67 @@
+general {
+  colors = true
+  color_good = "#a3be8c"
+  color_degraded = "#ebcb8b"
+  color_bad = "#bf616a"
+  interval = 1
+  separator = "|"
+}
+
+time {
+  format = "%Y-%m-%d %H:%M"
+}
+
+cpu_usage {
+  format = "CPU: %usage"
+  degraded_threshold = 90
+  max_threshold = 95
+  separator = false
+}
+
+cpu_temperature 0 {
+  format = "[%degrees C]"
+  max_threshold = 50
+  path = "/sys/devices/platform/
+}
+
+memory {
+  memory_used_method = classical
+  format = "MEM: %used / %total"
+}
+
+disk "/var/cache/pacman" {
+  format = "/var/cache/pacman: %percentage_used"
+  threshold_type = percentage_free
+  low_threshold = 5
+}
+
+disk "/" {
+  format = "/: %percentage_used (%used / %total)"
+  threshold_type = percentage_free
+  low_threshold = 5
+  separator = false
+}
+
+read_file UPTIME {
+  format = "%title: %content"
+  format_bad = "%title - %errno: %error"
+  path = "/proc/uptime"
+}
+
+volume master {
+  format = "VOL: %volume"
+  format_muted = "VOL: muted (%volume)"
+  device = "default"
+  align = "left"
+}
+
+
+order += "cpu_usage"
+order += "cpu_temperature 0"
+order += "memory"
+order += "volume master"
+order += "disk /"
+order += "disk /var/cache/pacman"
+order += "time"
+
+

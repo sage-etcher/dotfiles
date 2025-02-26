@@ -1,0 +1,1000 @@
+ls
+cd friendly-snippets/
+ls
+git branch -b c-personal-preferences
+git branch c-personal-preferences
+git checkout c-personal-preferences
+ls
+cd snippets/
+ls
+cd c
+ls
+vim c.json 
+git diff
+ls
+vim c.json 
+ls
+vim cdoc.json 
+ls
+git status
+git add c.json
+git status
+git commit -m "c: update personal preferences"
+git config --global user.email "sage.message@email.com"
+git config --global user.name "sage-etcher"
+git commit -m "c: update personal preferences"
+git push
+git push --set-upstream origin c-personal-preferences
+ls
+vim c.json
+ls
+cd ..
+ls
+cd ..
+l
+vim package.json q
+ls
+cd snippets/
+ls
+vim global.json 
+cat ../*.json
+vim ../package.json
+clear
+ls
+cd /tmp/test
+ls
+vim test.c
+clea
+clear
+sudo dnf search glew
+sudo dnff install glew-devel
+sudo dnf install glew-devel
+pkgconf --libs glew
+sudo dnf update
+sudo dnff install glew-develexit
+exit
+ls
+clear
+vim --help
+vim -V
+vim --version
+which vim
+$(which vim) --version
+clear
+ls
+vim 
+ls
+ls .config
+clear
+ls
+la
+clear
+ls
+mkdir .config/nvim/
+tmux
+exit
+osu
+vim /tmp/test.c
+vim /tmp/test1.c
+cc /tmp/test1.c
+ls
+./a.out
+vim /tmp/test1.c
+cc /tmp/test1.c; ./a.out
+vim /tmp/test1.c
+vim /tmp/test2.c
+ls
+rm a.out
+cd Code
+ls
+cd local/
+ls
+mkdir dynamic_array
+cd dynamic_array/
+ls
+mkdir src
+cd src/
+ls
+cp /tmp/test2.c ./main.c
+ls
+cp main.c sei.h
+cp main.c mathd.h
+cp main.c mathd.c
+cp main.c darr.c
+cp main.c darr.h
+ls
+vim darr.c
+ls
+vim sei.h 
+vim ma
+vim main.c 
+ls
+vim test.c
+cc test.c 
+ls
+./a.out 
+rm '\'
+ls
+rm a.out 
+ls
+./a.out 
+ls
+vim test.c 
+ls
+cat test.c
+rm test.c
+cd ..
+ls
+git init
+ls
+git statu
+git status
+git add .
+git status
+git commit -m "initial commit"
+git remote add origin git@github.com:sage-etcher/dynamic-array.git
+git push
+git push --set-upstream origin master
+git checkout main:License
+git checkout main:LICENSE
+git checkout main:/LICENSE
+git checkout main LICENSE
+git checkout main
+git pull
+git checkout main:LICENSE
+git checkout main:\LICENSE
+git checkout main
+ls
+cp LICENSE /tmp/
+git checkout master
+cp /tmp/LICENSE ./
+ls
+git status
+git add LICENSE 
+git commit -m "add BSD-2-Clause license"
+git push
+clear
+ls
+vim Makefile
+make
+vim src/darr.c
+make
+vim src/mathd.c
+make clean
+make
+vim src/mathd.c
+make clean
+make
+vim src/mathd.c
+make clean
+make build
+vim Makefile 
+make clean build
+git status
+pwd
+vim .gitignore
+git status
+git add ..
+git add .
+git status
+gitgit restore --staged src/darr.c
+git restore --staged src
+git status
+git commit -m "Build System: added a basic makefile"
+git add src/
+git status
+git diff
+git diff --staged
+git restore --staged src/sei.h
+git status
+git diff --staged
+git commit -m "darr.c darr_count(): return 0 not NULL on error"
+git status
+git add src/sei.h 
+git status
+git diff --staged
+git commit -m "sei.h: use popcountll builtlin when working with longlongs"
+git status
+git push
+ls
+cd src
+ls
+vim main.c
+make clean
+ls
+cd ..
+make clean
+make build
+make run
+./a.out
+ls
+./a.out 
+ls build/
+build/a.out
+ls
+vim src/main.c
+make clean build run
+vim src/main.c 
+make clean build run
+vim src/main.c 
+make clean build run
+vim src/main.c 
+make clean build run
+vim src/darr.c
+vim src/main.c
+make clean build run
+vim src/darr.c
+make clean build run
+git statu
+git status
+git diff 
+git add src/main.c
+git commit -m "add some light error logging"
+git add src/darr.c
+git status 
+git diff --staged
+git commit -m "darr_pop: return correct pointer. darr_i_sub: fix subtraction check ordering"
+git push
+ls
+vim Makefile 
+make clean
+make build
+vim Makefile 
+ls
+vim src/darr.c
+git status
+git add src/darr.c
+git status
+git diff --staged
+vim src/darr.c
+git commit -m "darr_i_init_old: removed stale function definition"
+git push
+vim src/darr.c
+ls
+vim src/main.c
+make clean
+make build
+make run
+vim src/main.c
+make run
+make clean build
+make run
+vim src/main.c
+make clean build run
+vim src/main.c
+make clean build run
+vim src/main.c
+make clean build run\
+vim src/main.c
+make clean build run
+vim src/main.c
+make clean build run
+vim src/main.c
+make clean build run
+ls
+vim src/mathd.c
+make clean build run
+vim src/mathd.c
+make clean build run
+vim src/mathd.c
+make clean build run
+ls
+vim src/darr.c
+make clean build run
+ls
+vim src/main.c
+make clean build run
+vim src/main.c
+make clean build run
+vim src/main.c
+make clean build run
+vim src/main.c
+make clean build run
+vim src/main.c
+make clean build run
+vim src/main.c
+make clean build run
+vim src/main.c
+make clean build run
+git status
+git diff
+git add .
+git diff --staged
+git commit -m "test + fix a few size_t overflows not being detected"
+ls
+git push
+ls
+vim src/sei.h 
+make clean
+make 
+clear
+ls
+rm '\'
+ls
+./a.out 
+vim src/main.c 
+make clean build run
+vim src/sei.h 
+vim Makefile 
+make clean build run
+vim Makefile 
+git status
+git diff
+git restore src/main.c
+git diff
+git add .
+git commit -m "add preproc support for 32bit binaries"
+git push
+ls
+vim src/mathd.c
+git status
+git add src/mathd.
+git add src/mathd.c
+git diff --staged
+git commit -m "removed stdio include"
+git push
+make clean
+make build
+make run
+osu
+ls
+vim src/darr.c
+make clean
+make
+vim src/darr.c
+make clean
+make
+make run
+vim src/main.c
+make run
+make clean build run
+vim src/main.c
+make clean build run
+vim src/main.c
+make clean build run
+vim src/main.c
+make clean build run
+vim src/main.c
+make clean build run
+vim src/main.c
+make clean build run
+git status
+git diff
+git add .
+git commit -m "rework darr_i_realloc: seperate size and alloc calculation and logic. make darr_i_init use a single allocatin"
+sudo push
+git push 
+git add
+git add .
+ssh-add
+ls
+tmux
+osu
+systemctl --user restart opentabletdriver
+osu
+ls
+clear
+ls
+reboot
+systemctl --user restart opentabletdriver
+systemctl --user stop opentabletdriver
+systemctl --user start opentabletdriver
+systemctl --user stop opentabletdriver
+systemctl --user restart opentabletdriver
+ls
+clear
+ls /usr/local
+ls /usr/local/bin/
+ls .local/bin/
+ls /usr/bin/
+ls /usr/bin/o*
+sudo dnf update
+otd
+otd-daemon
+sudo dnf -l opentabletdriver
+sudo dnf -ql opentabletdriver
+sudo rpm -ql opentabletdriver
+cat /usr/lib/systemd/user/opentabletdriver.service 
+systemctl --user log opentabletdriver
+systemctl --user --help
+systemctl --user status opentabletdriver
+systemctl --user restart opentabletdriver
+systemctl --user status opentabletdriver
+lspci
+clear
+lspci
+lsusb
+clear
+lsusb
+lsusb -v
+clear
+lsusb -v |grep 'huion'
+sudo lsusb -v |grep 'huion'
+sudo lsusb 
+clear
+sudo lsusb 
+sudo dnf install steam
+
+steem
+sudo dnf install steam
+sudo dnf clean
+sudo dnf update
+sudo dnf uninstall librewolf
+sudo dnf remove librewolf
+sudo dnf install steam
+sudo dnf install librewolf
+osu
+lsusb
+sudo lsusb
+osu
+systemctl --user stop opentabletdriver
+osu
+htop
+clear
+exit
+sudo dnf remove librewolf
+steam
+osu
+clear
+ls
+cd Code/sage-etcher/
+ls
+cd ../local/
+sl
+ls
+cd dynamic_array/
+ls
+vim src/main.c 
+cd /tmp
+vim test
+rm test.c
+vim test.c
+cc test.c
+ls
+./a.out
+ls
+vim test.c
+./a.out
+cc test.c
+./a.out
+ls
+ls -a
+mkdir test
+rm test
+mkdir test
+mv test.c test/
+mv a.out test/
+cd test/
+ls
+./a.out
+la
+ls /var/crash/
+ls /var/log
+ls /var/cache
+ls /var/lib/systemd/coredump/
+cc -ggdb -O0 test.c 
+ls
+./a.out
+coredumpctl list
+coredumpctl gdb 109184
+ls
+cat test.c
+exit
+clear
+c
+ls
+cd Downloads/
+l
+clear
+ls
+mkdir ector
+mv ect* ector/
+mv ect*.h ector/
+ls
+cd ector/
+ls
+clear
+ls
+vim .
+exit
+sudo dnf install btop
+btop
+clear
+exit
+ls Downloads/*.osr
+exit
+ls
+ls /etc/
+cler
+clear
+echo "$PIPEWIRE_ALSA"
+PIPEWIRE_ALSA='{ alsa.buffer-bytes=16384 alsa.period-bytes=512 }' osu
+PIPEWIRE_ALSA='{ alsa.buffer-bytes=16384 alsa.period-bytes=128 }' osu
+PIPEWIRE_ALSA='{ alsa.buffer-bytes=16384 alsa.period-bytes=128 }' steam
+echo "$PULSE_LATENCY_MSEC"
+osu
+systemctl --user restart opentabletdriver
+osu
+ls
+cd Downloads/
+ls
+osu Strassenpenner\ playing\ Tsuzuri\ -\ NAME\ \(Amateurre\)\ \[Jiysea_s\ Normal\]\ \(2024-12-14_17-57\).osr 
+systemctl --user restart opentabletdriver
+osu
+systemctl --user stop opentabletdriver
+osu
+ls Dow
+ls 
+ls *.osk
+ls *.os*
+ls *.osz
+osu *.osz
+system --user start opentabletdriver
+systemctl --user start opentabletdriver
+osu
+exit
+vim
+exit
+ls
+vim sei_new.h
+vim test.c
+cc test.c
+cc test.c -mpopcnt
+cc test.c -mpopcnt -mlzcnt
+ls
+./a.out 
+vim sei_new.h 
+exit
+ls
+vim sei.h 
+ls
+./a.out 
+ls
+cc test.c -mpopcnt -mlzcnt
+ls
+./a.out
+exit
+ls
+cd Code/
+ls
+clear
+ls
+cd local/
+ls
+cd dynamic_array/
+ls
+cd src/
+ls
+vim sei.h 
+cp sei.h sei32.h
+vim sei
+cp sei.h sei64.h
+vim sei32.h 
+vim seic.h
+vim sei32.h
+ls
+rm sei32.h
+rm sei64.h
+rm seic.h
+tmux
+ecit
+exit
+unrar
+sudo dnf install unrar
+cd Downloads/
+ls
+ls *.rar
+unrar 6DACH\ Qualifier.rar 
+unrar x 6DACH\ Qualifier.rar 
+ls
+cd 6DACH\ Qualifier
+ls
+exit
+steam
+pw-metadata -n settings 0 clock.force-quantum 0
+steam
+exit
+tmux
+sudo dnf update
+steam
+tmux
+restart
+reboot
+ls
+cd Code
+ls
+cd ..
+ls
+cd Source
+ls
+cd packages/
+ls
+cd ..
+cd programs/
+ls
+osu
+sudo dnf update
+clear
+sudo dnf clean
+sudo dnf clean all
+clear
+osu
+systemctl --user restart opentabletdriver
+osu
+ls
+cd Code
+ls
+cd local/dynamic_array/
+ls
+clear
+ls
+vim src/
+vim /tmp/win.c
+cc /tmp/win.c -o a.out $(pkgconf --libs --cflags sdl2)
+./a.out
+vim /tmp/win.c 
+cc /tmp/win.c -O2 -sdd -o a.out $(pkgconf --libs --cflags sdl2)
+./a.out 
+vim /tmp/win.c 
+ls
+vim src/darr.c
+ls
+vim Makefile 
+ls
+rm a.out
+cd ..
+ls
+cd ..
+ls
+cd sage-etcher/
+ls
+vim invoice-manager/CMakeLists.txt 
+ls
+cd invoice-manager/
+ls
+vim src/
+ls
+cd ..
+ls
+cd ..
+;s
+ls
+reboot
+sudo dnf update
+tmux
+ls
+clear
+
+ls
+clear
+ls /var/cache/dnf
+ls /var/cache/dnf/*/
+ls /var/cache/dnf/*/repodata/
+clear
+ls
+vim /tmp/fdiskl_new.log 
+sudo lv
+sudo lvs
+ls /sbin/lv*
+man lvremove
+lvremove opensuse
+sudo lvremove opensuse
+sudo lvremove vg_main opensuse
+sudo lvs
+man lvremove
+sudo lvremove /dev/vg_main/opensuse
+sudo lvs
+sudo lvrename arch arch-root
+sudo lvrename /dev/vg_main/arch{,-root}
+sudo lvrename /dev/vg_main/arch{,-}pacman
+sudo lvrename /dev/vg_main/arch{,-}var
+sudo lvrename /dev/vg_main/fedora{,-}root
+sudo lvrename /dev/vg_main/fedora{,-root}
+sudo lvrename /dev/vg_main/{unix,linux-}home
+sudo dnf update
+clear
+ls
+fdisk -l
+clear
+sudo fdisk -l
+sudo fdisk -l >> /tmp/fdiskl.log
+vim /tmp/fdiskl.log 
+lvs
+sudo lvs
+sudo lvs >> /tmp/fdiskl.log 
+ls
+clear
+ls
+clear
+ls
+vim /tmp/fdiskl.log 
+tmux
+reboot
+ clear
+exit
+sudo blkid -o list
+clear
+sudo blkid -o list
+clear
+sudo blkid -o list
+clear
+exit
+blkid
+clear
+sudo blkid
+sudo blkid | sort
+clear
+sudo blkid | sort
+blkls
+lsblk
+clear
+sudo lsblk
+exit
+alias ls='ls --color=never -F'
+ls
+ls Documents\ and\ Settings/
+ls Documents\ and\ Settings/admin/
+ls
+clear
+ls
+cd ..
+ls
+ls backup/
+cd backup/
+mkdir windows
+sudo mkdir windows
+cd ..
+l
+sudo cp mount/ProgramData backup/windows/ProgramData
+sudo cp -R mount/ProgramData backup/windows/ProgramData
+sudo cp -R mount/Users/admin/ backup/windows/User-admin
+ls
+clear
+ls
+cd ..
+ls
+cd mnt
+ls
+ls mount/
+ls mount/GOG\ Games/
+ls mount/GOG\ Games/Undertale/
+clear
+ls
+sudo umount /dev/nvme1n1p4
+ls
+sudo umount /dev/nvme1n1p4
+sudo umount /mnt/mount
+ls /mnt/mount/
+exit
+sudo blkid
+sudo blkid | grep 'sdf'
+ls
+exit
+ls /mnt
+sudo lvs
+sudo lvcreate -L 100G -n temp
+sudo lvcreate -L 100G -n temp vg_main
+sudo mkdir /mnt/mount
+sudo mkdir /mnt/backup
+sudo mkfs.exfat /dev/vg_main/temp
+sudo mount /dev/vg_main/temp /mnt/backup/
+sudo mount /dev/nvme1n1p4 /mnt/mount/
+cd /mnt/mount/
+ls
+clear
+ls --color off
+ls --color never
+ls --color=never
+dd[Bbash ls --color=never -F
+bash 
+cd ..
+sudo umount /dev/nvme1n1p4
+fdisk -l /dev/nvme1n1
+sudo fdisk -l /dev/nvme1n1
+man dd
+sudo dd if=/dev/zero of=/dev/nvme1n1 bs=1M count=1024 status=progress
+sudo fdisk -l /dev/nvme1n1
+sudo lsblk
+sudo mount /dev/nvme0n1p9 /mnt/mount
+sudo mount /dev/nvme0n1p10 /mnt/mount
+sudo fdisk /dev/nvme0n1
+sudo lsblk
+sudo lvrename /dev/vg_main/arch{,-root}
+clear
+sudo mount /dev/sdd1 /mnt/mount
+sudo mount /dev/sdd2 /mnt/mount
+ls /mnt/mount
+ls /mnt/mount/main/
+ls /mnt/mount/main/AppImages/
+ls /mnt/mount/main/Desktop/
+ls /mnt/mount/main/Documents/
+ls /mnt/mount/main/Music/
+ls /mnt/mount/main/Pictures/
+ls /mnt/mount/main/Pictures/wallpapers/
+ls /mnt/mount/main/Pictures/Screenshots/
+ls /mnt/mount/main/Public
+ls /mnt/mount/main/skel
+ls /mnt/mount/main/skel/Music/
+ls /mnt/mount/main/skel/Pictures/
+ls /mnt/mount/main/skel/Pictures/wallpapers/
+ls /mnt/mount/main/Templates/
+ls /mnt/mount/main/Videos/
+ls /mnt/mount/main/Videos/Screenrecorder/
+ls
+sudo mv mount/main backup/archcraft-home-maybe
+man mv
+ls
+man cp
+ls
+clear
+ls
+ls -a mount/
+ls -a mount/main/
+sudo rm mount/main/.cache
+sudo rm -rf mount/main/.cache
+ls
+la backup/archcraft-home-maybe/
+sudo rm -rf backup/archcraft-home-maybe/.cache
+sudo mv mount/main backup/archcraft-home-maybe
+ls
+cd mount/main/.local/share/
+ls
+sudo rm -rf osu.bak osu.wincpy osu
+ls
+cd ..
+ls
+cd ..
+ls
+cd ..
+ls
+cd ..
+ls
+
+sudo mv mount/main backup/archcraft-home-maybe
+ls
+sudo mv -R mount/main backup/archcraft-home-maybe
+ls 
+
+sudo cp -R mount/main backup/archcraft-home-maybe
+ls
+ls backup/archcraft-home-maybe/
+ls backup/archcraft-home-maybe/main/
+ls
+sudo umount /dev/sdd2
+sudo mount /dev/sdd3 /mnt/mount
+sudo fdisk /dev/sdd
+mkswap /dev/sdd1
+sudo mkswap /dev/sdd1
+sudo mkfs.exfat /dev/sdd2
+sudo mkfs.exfat /dev/sdd3
+clear
+ls
+sudo lvs
+sudo lsblk
+ls /sbin/lv*
+sudo vgdisplay 
+sudo vgs
+sudo pvs
+sudo fdisk /dev/sdc
+sudo fdisk /dev/sdb
+p
+clear
+cd ..
+ls
+exit
+vim /tmp/blkid.log 
+exi
+vim /tmp/blkid.log 
+ls
+sudo umount /mnt/backup 
+ls /mnt/
+ls /mnt/backup/
+ls /mnt/mount/
+clear
+ls
+sudo lsblk
+ls /boot
+ls /boot/efi
+sudo ls /boot/efi
+clear
+ls
+ls /boot/grub2/
+sudo ls /boot/grub2/
+sudo grub2-mkconfig 
+sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+ls
+clear
+ls
+ls /boot/
+sudo ls /boot/efi
+
+sudo grub2-mkconfig -o /boot/efi/grub/grub.cfg
+sudo reboot
+sudo blkid |sort
+clear
+man blkid
+sudo blkid -o list
+clear
+sudo blkid -o value
+clear
+man blkid
+sudo blkid -o udev
+sudo blkid -o device
+clear
+sudo blkid |sort
+sudo blkid |sort >> /tmp/blkid.log
+sudo fdisk -l >> /tmp/blkid.log
+ls
+sudo mount /dev/sda1 /mnt/mount
+ls /mnt/mount
+ls /mnt/mountEFI
+ls /mnt/mount/EFI
+ls /mnt/mount/EFI/slackware-15.0/
+ls /mnt/mount/EFI/Slackware/
+ls /mnt/mount/EFI/grub/
+clear
+ls
+sudo fdisk -l /dev/sda
+sudo fdisk /dev/sda
+sudo lsblk
+sudo umount /mnt/mount
+sudo fdisk /dev/sda
+clear
+ls
+sudo fdisk -l
+ls
+fdisk -l
+clear
+tmux
+sudo reboot
+sudo ls /boot/efi
+sudo ls /boot/efi/grub
+sudo mv /boot/efi/grub.cfg{,.fedora}
+sudo mv /boot/efi/grub/grub.cfg{,.fedora}
+sudo ln -sf /boot/efi/grub/grub.cfg{.fedora,}
+sudo cp /boot/efi/grub/grub.cfg{.fedora,}
+reboot
+sudo ls /boot/efi/
+sudo ls /boot/efi/EFI
+sudo ls /boot/
+sudo ls /boot/efi
+sudo ls /boot/efi/grub
+cat /boot/efi/grub/grub.cfg
+clear
+sudo grub2-mkconfig -o /boot/efi/grub/grub.cfg
+sudo reboot
+sudo mount /dev/vg_main/arch-root /mnt/mount
+ls /mnt/mount/boot
+ls /mnt/mount/boot/efi
+ls /boot/efi
+sudo ls /boot/efi
+sudo ls -l /boot/efi/
+sudo mkdir /boot/efi/loaders
+sudo mv /boot/efi/*.img loaders/
+sudo mv /boot/efi/amd-ucode loaders/
+sudo mv /boot/efi/amd-ucode.img /boot/efi/loaders/
+sudo mv /boot/efi/*.img /boot/efi/loaders/
+sudo mv /boot/efi/initramfs-linux-lts-fallback.img /boot/efi/loaders/
+sudo mv /boot/efi/initramfs-linux-lts.img /boot/efi/loaders/
+sudo mv /boot/efi/vmlinuz-linux-lts /boot/efi/loaders/
+ls
+ls /boot
+sudo ls /boot/efi
+sudo grub2-mkconfig -o /boot/efi/grub/grub.cfg
+sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+sudo reboot
+cd /boot
+ls
+sudo cd efi/EFI
+ls
+sudo ls
+clear
+sudo ls /efi/EFI
+sudo ls /efi/
+sudo ls /efi
+sudo ls efi
+sudo ls efi/EFI
+sudo mv efi/EFI/fedora $HOME/Backup/fedora
+sudo reboot
+ls
+sudo reboot

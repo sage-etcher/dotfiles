@@ -1,0 +1,3 @@
+[submodule "arch-desktop/alacritty/themes"]
+	path = arch-desktop/alacritty/themes
+	url = https://github.com/alacritty/alacritty-theme
