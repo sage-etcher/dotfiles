@@ -1,4 +1,6 @@
 
+require('utils')
+
 local lint = require('lint')
 local util = require('lint.util')
 
