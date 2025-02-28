@@ -13,7 +13,7 @@ sync_from_config() {
 }
 
 # sync basic config
-for config in clang-tidy git npm nvim suckless-build-files tmux wget X11 xmodmap; do
+for config in clang-tidy git npm nvim suckless-build-files tcsh tmux wget X11 xmodmap; do
     sync_from_config "${config}/"
 done
 
@@ -31,7 +31,3 @@ for config in fastfetch; do
 done
 
 
-# sync tcsh (has to be from home directory)
-sync "${HOME}/.cshrc" "./tcsh/cshrc"
-sync "${HOME}/.login" "./tcsh/login"
-sync "${HOME}/.logout" "./tcsh/logout"
