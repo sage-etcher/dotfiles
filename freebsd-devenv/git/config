@@ -5,7 +5,6 @@
 [init]
 	defaultBranch = master
 [hub]
-	protocol = ssh
 	protocal = ssh
 [credential]
 	helper = cache --timeout 21600
