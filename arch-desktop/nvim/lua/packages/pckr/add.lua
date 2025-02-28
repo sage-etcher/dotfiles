@@ -69,6 +69,10 @@ require('pckr').add({
     run = ':TSUpdate',
   };
 
+  { 'sage-etcher/vim-i8080-syntax' };
+  
+  { 'sage-etcher/vim-plm-syntax' };
+
   { 'nvim-tree/nvim-web-devicons',
     config = function() require('config.nvim_web_devicons') end,
   };
@@ -91,6 +95,9 @@ require('pckr').add({
   { 'airblade/vim-gitgutter',
     config = function() require('config.gitgutter') end,
   };
+
+  -- discord rich presence
+  { 'andweeb/presence.nvim' };
 
 })
 
