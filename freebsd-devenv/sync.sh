@@ -1,16 +1,6 @@
 #!/usr/bin/env sh
 
-sync() {
-    rsync -au --delete "$1" "$2"
-}
-
-sync_from_config() {
-    local src="${HOME}/.config/$1"
-    local dst="$1"
-    local exclude=$2
-
-    sync "${src}" "${dst}"
-}
+source sync_fn.sh
 
 # sync basic config
 for config in clang-tidy git npm nvim suckless-build-files tcsh tmux wget X11 xmodmap; do
