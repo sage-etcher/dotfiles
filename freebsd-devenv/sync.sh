@@ -26,7 +26,7 @@ for config in dmenu dwm st; do
 done
 
 # sync only bins
-for config in feh fastfetch; do
+for config in fastfetch; do
     sync_from_config "${config}/bin/"
 done
 

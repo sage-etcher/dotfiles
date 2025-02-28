@@ -38,9 +38,9 @@ rebuild-dwm
 
 VBoxClient --vmsvga
 VBoxClient --clipboard
-feh-set-bg
 xmodmap "${XDG_CONFIG_HOME}/xmodmap/xmodmaprc"
 setxkbmap -option caps:escape
+~/.fehbg
 
 xcompmgr &
 exec dwm
