@@ -1,5 +1,6 @@
 -- import
 require('utils')
+require('lsp.toggle')
 
 local cmp = require('cmp')
 local trouble = require('trouble')
@@ -49,6 +50,7 @@ end, opts)
 
 -- lsp
 local opts = {}
+keymap('n', '<leader>tl', toggle_lsp)
 keymap('n', 'K', lsp.buf.hover, opts)
 keymap('n', 'gd', lsp.buf.definition, opts)
 keymap('n', 'gD', lsp.buf.declaration, opts)
