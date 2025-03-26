@@ -11,7 +11,7 @@ autocmd('FileType', {
   callback = function(ev)
     lsp.start({
       name = 'Clangd',
-      cmd = { 'clangd17' },
+      cmd = { 'clangd' },
       root_dir = findroot({
         '.clangd',
         '.clang-tidy',

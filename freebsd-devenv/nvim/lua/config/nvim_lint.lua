@@ -13,7 +13,7 @@ local lint_progress = function()
 end
 
 local clangtidy = lint.linters.clangtidy
-clangtidy.cmd = 'clang-tidy17'
+clangtidy.cmd = 'clang-tidy'
 clangtidy.args = {
   '--quiet'
 }
