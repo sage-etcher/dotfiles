@@ -8,13 +8,13 @@ tabset.setup({
   },
   languages = {
     {
-      filetypes = { 'python', 'Makefile' },
+      filetypes = { 'python', 'make' },
       config = {
         expandtab = false,
       }
     },
     {
-      filetypes = { 'yaml', 'html', 'lua', 'json' },
+      filetypes = { 'yaml', 'html', 'lua', 'json', 'meson' },
       config = {
         tabwidth = 2,
       }

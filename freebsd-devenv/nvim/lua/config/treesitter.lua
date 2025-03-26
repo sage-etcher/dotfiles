@@ -5,7 +5,7 @@ tsc.setup({
   ensure_installed = {
     "lua", "vim", "vimdoc", "query", 
     "c", "python", "bash", "go", "disassembly",
-    "cmake", "make",
+    "cmake", "meson", "make",
     "markdown", "markdown_inline", 
     "yaml", "toml", "json",
     "git_config", "git_rebase", "gitattributes", "gitcommit", "gitignore", "diff"
