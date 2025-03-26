@@ -50,5 +50,8 @@ if ( ! $SSH_RUNNING ) then
     /usr/bin/ssh-add
 endif
 
+# compile things with all cores
+setenv MAKEFLAGS -j6
+
 unset SSH_RUNNING
 
