@@ -1,7 +1,7 @@
 -- import
-require('utils')
-require('lsp.toggle')
+require('keybinds.c_keymap')
 
+require('lsp.toggle')
 local cmp = require('cmp')
 local trouble = require('trouble')
 local tmux = require('tmux')
@@ -10,87 +10,101 @@ local ts_builtin = require('telescope.builtin')
 -- leader config
 vim.g.mapleader = ','
 
--- cmp and vsnip
-local has_words_before = function()
-  unpack = unpack or table.unpack
-  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') == nil
-end
+-- keymap
+c_keyset({
+  -- cmp nad vsnip
+  ["<C-j>"] = {
+    mode = { "i", "s" },
+    map = {
+      {
+        cond   = cmp.visible,
+        action = cmp.select_next_item
+      },
+      {
+        cond = function()
+          return vim.fn['vsnip#available'](1) == 1
+        end,
+        action = plug_action("vsnip-expand-or-jump"),
+      },
+    },
+  },
 
-local opts = {}
+  ["<C-k>"] = {
+    mode = { "i", "s" },
+    map = {
+      {
+        cond   = cmp.visible,
+        action = cmp.select_prev_item,
+      },
+      {
+        cond = function()
+          return vim.fn['vsnip#available'](-1) == 1
+        end,
+        action = plug_action("vsnip-jump-prev"),
+      },
+    },
+  },
 
-keymap({'i', 's'}, '<C-j>', function()
-  if cmp.visible() then
-    cmp.select_next_item()
-  elseif vim.fn['vsnip#available'](1) == 1 then
-    feedkey('<Plug>(vsnip-expand-or-jump)', '')
-  elseif has_words_before() then
-    cmp.complete()
-  end
-end, opts)
+  ["<C-e>"] = imap(cmp.abort),
 
-keymap({'i', 's'}, '<C-k>', function()
-  if cmp.visible() then
-    cmp.select_prev_item()
-  elseif vim.fn['vsnip#available'](-1) == 1 then
-    feedkey('<Plug>(vsnip-jump-prev)', '')
-  end
-end, opts)
+  ["<Tab>"] = {
+    mode = { "i" },
+    map = {
+      cond   = cmp.visible,
+      action = function()
+        cmp.confirm({ select = true })
+      end,
+      fallback = true,
+    },
+  },
 
-keymap('i', '<C-e>', cmp.abort, opts)
+  ["<CR>"] = {
+    mode = { "i" },
+    map = {
+      action = cmp.abort,
+      always_fallback = true,
+    }
+  },
 
-keymap('i', '<Tab>', function() 
-  if cmp.visible() then 
-    cmp.confirm({ select = true }) 
-  else
-    fallback('<Tab>')
-  end
-end, opts)
+  -- lsp options
+  ["K"]    = nmap(lsp.buf.hover),
+  ["gD"]   = nmap(lsp.buf.declaration),
+  ["gd"]   = nmap(lsp.buf.definition),
+  ["gi"]   = nmap(lsp.bufimplementation),
+  ["go"]   = nmap(lsp.buf.type_definition),
+  ["gr"]   = nmap(lsp.buf.references),
+  ["gs"]   = nmap(lsp.buf.signature_help),
+  ["<F2>"] = map_all(lsp.buf.rename),
+  ["<F5>"] = map_all(function()
+    lsp.buf.rename('g_'..vim.fn.expand('<cword>'))
+  end),
+  ["<leader>tl"] = nmap(toggle_lsp),
 
+  -- Formatter
+  ["<F3>"] = map_all(cmd_action(":Format")),
 
--- lsp
-local opts = {}
-keymap('n', '<leader>tl', toggle_lsp)
-keymap('n', 'K', lsp.buf.hover, opts)
-keymap('n', 'gd', lsp.buf.definition, opts)
-keymap('n', 'gD', lsp.buf.declaration, opts)
-keymap('n', 'gi', lsp.buf.implementation, opts)
-keymap('n', 'go', lsp.buf.type_definition, opts)
-keymap('n', 'gr', lsp.buf.references, opts)
-keymap('n', 'gs', lsp.buf.signature_help, opts)
-keymap('n', '<F2>', lsp.buf.rename, opts)
-keymap('n', '<F5>', function() lsp.buf.rename('g_'..vim.fn.expand('<cword>')) end, opts) 
+  -- Trouble
+  ["<leader>xx"] = nmap(function()
+    trouble.focus(trouble.toggle('diagnostics'))
+  end),
+  
+  -- Telescope
+  ["<leader>ff"] = nmap(ts_builtin.find_files),
+  ["<leader>fg"] = nmap(ts_builtin.live_grep),
+  ["<leader>fb"] = nmap(ts_builtin.buffers),
+ 
+  -- tmux
+  ['<M-h>'] = map_all(tmux.move_left),
+  ['<M-j>'] = map_all(tmux.move_down),
+  ['<M-k>'] = map_all(tmux.move_up),
+  ['<M-l>'] = map_all(tmux.move_right),
 
--- formatter
-local opts = {}
-keymap('n', '<F3>', ':Format', opts)
+  ['<M-S-h>'] = map_all(tmux.resize_left),
+  ['<M-S-j>'] = map_all(tmux.resize_down),
+  ['<M-S-k>'] = map_all(tmux.resize_up),
+  ['<M-S-l>'] = map_all(tmux.resize_right),
 
+})
 
--- trouble
-local opts = { silent = true }
-keymap('n', '<leader>xx', function()
-  -- will throw error string on closing, ie silent
-  trouble.focus(trouble.toggle('diagnostics'))
-end, opts)
-
-
--- telescope
-local opts = {}
-keymap('n', '<leader>ff', ts_builtin.find_files, opts)
-keymap('n', '<leader>fg', ts_builtin.live_grep, opts)
-keymap('n', '<leader>fb', ts_builtin.buffers, opts)
-
-
--- tmux integration
-local opts = {}
-keymap('n', '<M-h>', tmux.move_left, opts)
-keymap('n', '<M-j>', tmux.move_bottom, opts)
-keymap('n', '<M-k>', tmux.move_top, opts)
-keymap('n', '<M-l>', tmux.move_right, opts)
-
-keymap('n', '<M-S-h>', tmux.resize_left, opts)
-keymap('n', '<M-S-j>', tmux.resize_bottom, opts)
-keymap('n', '<M-S-k>', tmux.resize_top, opts)
-keymap('n', '<M-S-l>', tmux.resize_right, opts)
 
 -- end of file
