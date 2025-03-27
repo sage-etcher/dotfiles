@@ -49,9 +49,9 @@ require('pckr').add({
   };
 
   -- linter
-  { 'mfussenegger/nvim-lint',
-    config = function() require('config.nvim_lint') end,
-  };
+  --{ 'mfussenegger/nvim-lint',
+  --  config = function() require('config.nvim_lint') end,
+  --};
 
   -- formatters
   { 'mhartington/formatter.nvim',

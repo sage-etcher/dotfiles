@@ -12,6 +12,10 @@ autocmd('FileType', {
     lsp.start({
       name = 'Clangd',
       cmd = { 'clangd' },
+      args = {
+        '--clang-tidy',
+        '-j4',
+      },
       root_dir = findroot({
         '.clangd',
         '.clang-tidy',
