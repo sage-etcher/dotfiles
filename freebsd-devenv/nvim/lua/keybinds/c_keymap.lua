@@ -141,18 +141,13 @@ end
 
 -- basic mapping shortcuts
 map_template = function(action, desc, modes)
-  local result = {
+  return {
     mode = modes,
+    desc = desc,
     map = {
       action = action,
     }
   }
-
-  if desc ~= nil then
-    result.desc = desc
-  end
-
-  return result
 end
 
 map = function(action, desc)
@@ -164,7 +159,7 @@ map_bang = function(action, desc)
 end
 
 map_all = function(action, desc)
-  return map_template(action, desc, { "n", "i", "v", "s", "o" })
+  return map_template(action, desc, { "n", "i", "v", "s", "o", "t" })
 end
 
 nmap = function(action, desc)

@@ -98,15 +98,15 @@ c_keyset({
   ["<leader>fb"] = nmap(ts_builtin.buffers,    "telescope: search by buffer"),
  
   -- tmux
-  ['<M-h>'] = map_all(tmux.move_left,      "tmux: move left"),
-  ['<M-j>'] = map_all(tmux.move_down,      "tmux: move down"),
-  ['<M-k>'] = map_all(tmux.move_up,        "tmux: move up"),
-  ['<M-l>'] = map_all(tmux.move_right,     "tmux: move right"),
+  ['<M-h>'] = map_all(tmux.move_left,       "tmux: move left"),
+  ['<M-j>'] = map_all(tmux.move_bottom,     "tmux: move down"),
+  ['<M-k>'] = map_all(tmux.move_top,        "tmux: move up"),
+  ['<M-l>'] = map_all(tmux.move_right,      "tmux: move right"),
 
-  ['<M-S-h>'] = map_all(tmux.resize_left,  "tmux: expand left"),
-  ['<M-S-j>'] = map_all(tmux.resize_down,  "tmux: expand down"),
-  ['<M-S-k>'] = map_all(tmux.resize_up,    "tmux: expand up"),
-  ['<M-S-l>'] = map_all(tmux.resize_right, "tmux: expand right"),
+  ['<M-S-h>'] = map_all(tmux.resize_left,   "tmux: resize left"),
+  ['<M-S-j>'] = map_all(tmux.resize_bottom, "tmux: resize bottom"),
+  ['<M-S-k>'] = map_all(tmux.resize_top,    "tmux: resize top"),
+  ['<M-S-l>'] = map_all(tmux.resize_right,  "tmux: resize right"),
 
 })
 
