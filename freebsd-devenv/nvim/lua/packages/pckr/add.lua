@@ -64,10 +64,10 @@ require('pckr').add({
   };
 
   -- pretty
-  { 'nvim-treesitter/nvim-treesitter',
-    config = function() require('config.treesitter') end,
-    run = ':TSUpdate',
-  };
+  --{ 'nvim-treesitter/nvim-treesitter',
+  --  config = function() require('config.treesitter') end,
+  --  run = ':TSUpdate',
+  --};
 
   { 'sage-etcher/vim-i8080-syntax' };
   
