@@ -104,6 +104,11 @@ c_keyset = function(list)
     local modes = dget(v, "mode", DEFAULT_MODE)
     local opts  = dget(v, "opts", DEFAULT_OPTS)
     local map   = dget(v, "map", nil)
+    local desc  = dget(v, "desc", nil)
+
+    if desc ~= nil then
+      opts.desc = desc
+    end
 
     if map == nil then
       log_error("keybind: c_keyset: bad map")
@@ -135,57 +140,63 @@ end
 
 
 -- basic mapping shortcuts
-map_template = function(action, modes)
-  return {
+map_template = function(action, desc, modes)
+  local result = {
     mode = modes,
     map = {
       action = action,
     }
   }
+
+  if desc ~= nil then
+    result.desc = desc
+  end
+
+  return result
 end
 
-map = function(action)
-  return map_template(action, { "n", "v", "s", "o" })
+map = function(action, desc)
+  return map_template(action, desc, { "n", "v", "s", "o" })
 end
 
-map_bang = function(action)
-  return map_template(action, { "i", "c" })
+map_bang = function(action, desc)
+  return map_template(action, desc, { "i", "c" })
 end
 
-map_all = function(action)
-  return map_template(action, { "n", "i", "v", "s", "o" })
+map_all = function(action, desc)
+  return map_template(action, desc, { "n", "i", "v", "s", "o" })
 end
 
-nmap = function(action)
-  return map_template(action, { "n" })
+nmap = function(action, desc)
+  return map_template(action, desc, { "n" })
 end
 
-imap = function(action)
-  return map_template(action, { "i" })
+imap = function(action, desc)
+  return map_template(action, desc, { "i" })
 end
 
-vmap = function(action)
-  return map_template(action, { "v", "s" })
+vmap = function(action, desc)
+  return map_template(action, desc, { "v", "s" })
 end
 
-xmap = function(action)
-  return map_template(action, { "v" })
+xmap = function(action, desc)
+  return map_template(action, desc, { "v" })
 end
 
-smap = function(action)
-  return map_template(action, { "s" })
+smap = function(action, desc)
+  return map_template(action, desc, { "s" })
 end
 
-omap = function(action)
-  return map_template(action, { "o" })
+omap = function(action, desc)
+  return map_template(action, desc, { "o" })
 end
 
-tmap = function(action)
-  return map_template(action, { "t" })
+tmap = function(action, desc)
+  return map_template(action, desc, { "t" })
 end
 
-lmap = function(action)
-  return map_template(action, { "i", "c", "l" })
+lmap = function(action, desc)
+  return map_template(action, desc, { "i", "c", "l" })
 end
 
 

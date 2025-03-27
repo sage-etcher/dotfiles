@@ -15,6 +15,7 @@ c_keyset({
   -- cmp nad vsnip
   ["<C-j>"] = {
     mode = { "i", "s" },
+    desc = "cmp|vsnip: select next item",
     map = {
       {
         cond   = cmp.visible,
@@ -31,6 +32,7 @@ c_keyset({
 
   ["<C-k>"] = {
     mode = { "i", "s" },
+    desc = "cmp|vsnip: select previous item",
     map = {
       {
         cond   = cmp.visible,
@@ -45,10 +47,11 @@ c_keyset({
     },
   },
 
-  ["<C-e>"] = imap(cmp.abort),
+  ["<C-e>"] = imap(cmp.abort, "cmp: close cmp drowdown"),
 
   ["<Tab>"] = {
     mode = { "i" },
+    desc = "cmp: autocomplete",
     map = {
       cond   = cmp.visible,
       action = function()
@@ -60,6 +63,7 @@ c_keyset({
 
   ["<CR>"] = {
     mode = { "i" },
+    desc = "cmp|vim: close cmp dropdown and send <CR>",
     map = {
       action = cmp.abort,
       always_fallback = true,
@@ -67,42 +71,42 @@ c_keyset({
   },
 
   -- lsp options
-  ["K"]    = nmap(lsp.buf.hover),
-  ["gD"]   = nmap(lsp.buf.declaration),
-  ["gd"]   = nmap(lsp.buf.definition),
-  ["gi"]   = nmap(lsp.bufimplementation),
-  ["go"]   = nmap(lsp.buf.type_definition),
-  ["gr"]   = nmap(lsp.buf.references),
-  ["gs"]   = nmap(lsp.buf.signature_help),
-  ["<F2>"] = map_all(lsp.buf.rename),
+  ["K"]    = nmap(lsp.buf.hover,           "lsp: display hover details"),
+  ["gD"]   = nmap(lsp.buf.declaration,     "lsp: goto declaration"),
+  ["gd"]   = nmap(lsp.buf.definition,      "lsp: goto definition"),
+  ["gi"]   = nmap(lsp.buf.implementation,  "lsp: goto implementaion"),
+  ["go"]   = nmap(lsp.buf.type_definition, "lsp: goto type definition"),
+  ["gr"]   = nmap(lsp.buf.references,      "lsp: show references"),
+  ["gs"]   = nmap(lsp.buf.signature_help,  "lsp: show signature"),
+  ["<F2>"] = map_all(lsp.buf.rename,       "lsp: rename item"),
   ["<F5>"] = map_all(function()
     lsp.buf.rename('g_'..vim.fn.expand('<cword>'))
-  end),
-  ["<leader>tl"] = nmap(toggle_lsp),
+  end, "lsp: append 'g_' to an item, marking it as global"),
+  ["<leader>tl"] = nmap(toggle_lsp,        "lsp: toggle on/off"),
 
   -- Formatter
-  ["<F3>"] = map_all(cmd_action(":Format")),
+  ["<F3>"] = map_all(cmd_action(":Format"), "formatter: run on current buffer"),
 
   -- Trouble
   ["<leader>xx"] = nmap(function()
     trouble.focus(trouble.toggle('diagnostics'))
-  end),
+  end, "trouble: toggle issues pane"),
   
   -- Telescope
-  ["<leader>ff"] = nmap(ts_builtin.find_files),
-  ["<leader>fg"] = nmap(ts_builtin.live_grep),
-  ["<leader>fb"] = nmap(ts_builtin.buffers),
+  ["<leader>ff"] = nmap(ts_builtin.find_files, "telescope: search by file"),
+  ["<leader>fg"] = nmap(ts_builtin.live_grep,  "telescope: search by grep"),
+  ["<leader>fb"] = nmap(ts_builtin.buffers,    "telescope: search by buffer"),
  
   -- tmux
-  ['<M-h>'] = map_all(tmux.move_left),
-  ['<M-j>'] = map_all(tmux.move_down),
-  ['<M-k>'] = map_all(tmux.move_up),
-  ['<M-l>'] = map_all(tmux.move_right),
+  ['<M-h>'] = map_all(tmux.move_left,      "tmux: move left"),
+  ['<M-j>'] = map_all(tmux.move_down,      "tmux: move down"),
+  ['<M-k>'] = map_all(tmux.move_up,        "tmux: move up"),
+  ['<M-l>'] = map_all(tmux.move_right,     "tmux: move right"),
 
-  ['<M-S-h>'] = map_all(tmux.resize_left),
-  ['<M-S-j>'] = map_all(tmux.resize_down),
-  ['<M-S-k>'] = map_all(tmux.resize_up),
-  ['<M-S-l>'] = map_all(tmux.resize_right),
+  ['<M-S-h>'] = map_all(tmux.resize_left,  "tmux: expand left"),
+  ['<M-S-j>'] = map_all(tmux.resize_down,  "tmux: expand down"),
+  ['<M-S-k>'] = map_all(tmux.resize_up,    "tmux: expand up"),
+  ['<M-S-l>'] = map_all(tmux.resize_right, "tmux: expand right"),
 
 })
 
