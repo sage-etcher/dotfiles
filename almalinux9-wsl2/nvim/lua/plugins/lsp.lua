@@ -50,7 +50,7 @@ return {
 
   {
     'ray-x/lsp_signature.nvim',
-    branch = 'neovim-0.6',
+    branch = 'nvim-0.9',  -- supports nvim>=0.8 owo"
     opts = {
       bind = true,
       handler_opts = {
