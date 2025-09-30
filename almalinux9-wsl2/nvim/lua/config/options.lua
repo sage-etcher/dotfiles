@@ -34,7 +34,7 @@ vim.wo.relativenumber = true
 vim.opt.wrap = false
 
 -- rulers
-vim.opt.colorcolumn = '80,120'
+vim.opt.colorcolumn = '74,80,120'
 
 -- visual whitespace
 vim.o.list = true
