@@ -1,0 +1,10 @@
+[user]
+	email = sage.message@email.com
+	name = sage-etcher
+	signingkey = [REDACTED]
+[init]
+	defaultBranch = master
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true

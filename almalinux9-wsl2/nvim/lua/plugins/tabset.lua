@@ -12,13 +12,13 @@ return {
           },
         },
         {
-          filetypes = { 'yaml', 'html', 'lua', 'json' },
+          filetypes = { 'yaml', 'html', 'lua', 'json', 'meson' },
           config = {
             tabwidth = 2,
           },
         },
         {
-          filetypes = { 'assembly', 'disassembly' },
+          filetypes = { 'assembly', 'disassembly', 'i8080' },
           config = {
             tabwidth = 8,
             expandtab = false,

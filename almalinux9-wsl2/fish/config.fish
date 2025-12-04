@@ -1,10 +1,10 @@
 
 #!/usr/bin/env fish
 
-if not functions -q fundle; eval (curl -sfL https://git.io/fundle-install); end
+#if not functions -q fundle; eval (curl -sfL https://git.io/fundle-install); end
 
-fundle plugin 'danhper/fish-ssh-agent'
-fundle init
+#fundle plugin 'danhper/fish-ssh-agent'
+#fundle init
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
