@@ -1,5 +1,5 @@
 [user]
-	email = sage.message@email.com
+	email = sage.signup@email.com
 	name = sage-etcher
 	signingkey = [REDACTED]
 [init]
