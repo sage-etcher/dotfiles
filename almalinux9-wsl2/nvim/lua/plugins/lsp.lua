@@ -45,4 +45,23 @@ return {
     },
   },
 
+  {
+    'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
+    tag = 'v3.0.0',
+    lazy = false,
+    config = function()
+      vim.diagnostic.config({
+        virtual_text  = false,
+        virtual_lines = true,
+      })
+
+      lsp_lines = require('lsp_lines')
+      lsp_lines.setup({})
+    end,
+    keys = {
+      { '<leader>l', '<cmd>:lua require("lsp_lines").toggle()<cr>' },
+    },
+
+  },
+
 }
