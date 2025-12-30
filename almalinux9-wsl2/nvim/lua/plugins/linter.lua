@@ -12,11 +12,14 @@ return {
       }
 
       -- try and start a linter
-      vim.api.nvim_create_autocmd({ 'BufWritePost' }, {
-        callback = function()
-          lint.try_lint()
-        end,
-      })
+      vim.api.nvim_create_autocmd(
+        { 'BufWritePost' },
+        {
+          callback = function()
+            lint.try_lint(nil, { ignore_errors = true })
+          end,
+        }
+      )
 
     end,
   },
